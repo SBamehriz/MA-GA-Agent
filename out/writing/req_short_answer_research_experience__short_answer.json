@@ -1,0 +1,365 @@
+{
+  "request": {
+    "id": "req_short_answer_research_experience",
+    "documentType": "short_answer",
+    "universityId": "university_mo44tk4p_1j_e759581f",
+    "programId": "program_mo44tk4r_1p_d2435d2c",
+    "prompt": "In 150 words, describe a research problem you scoped end-to-end and what you would want to keep working on in this program.",
+    "wordLimit": 150
+  },
+  "draft": {
+    "requestId": "req_short_answer_research_experience",
+    "documentType": "short_answer",
+    "targetProgramId": "program_mo44tk4r_1p_d2435d2c",
+    "targetUniversityId": "university_mo44tk4p_1j_e759581f",
+    "targetFundingId": null,
+    "targetPersonRoleId": null,
+    "title": "Short answer — MS in Artificial Intelligence @ University of Georgia",
+    "sections": [
+      {
+        "id": "prompt",
+        "title": "Prompt",
+        "paragraphs": [
+          {
+            "id": "para_c",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_1",
+                "kind": "stylistic",
+                "text": "_Prompt_: In 150 words, describe a research problem you scoped end-to-end and what you would want to keep working on in this program.",
+                "refs": [],
+                "slotTag": "prompt_echo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body",
+        "title": "Response",
+        "paragraphs": [
+          {
+            "id": "para_b",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_2",
+                "kind": "voice_stylistic",
+                "text": "I will answer plainly, with specifics that are checkable.",
+                "refs": [
+                  {
+                    "type": "voice_anchor",
+                    "id": "voice_anchor_alex_rivera_2026"
+                  }
+                ],
+                "slotTag": "opening_voice"
+              },
+              {
+                "id": "claim_3",
+                "kind": "factual_profile",
+                "text": "The research problem I want to work on sits inside natural language processing, multi-agent reinforcement learning, on-device inference.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_18_2621ae40"
+                  }
+                ],
+                "slotTag": "opening_focus"
+              },
+              {
+                "id": "claim_4",
+                "kind": "factual_program",
+                "text": "The MS in Artificial Intelligence is exactly where that problem lives in coursework and faculty research.",
+                "refs": [
+                  {
+                    "type": "program",
+                    "id": "program_mo44tk4r_1p_d2435d2c"
+                  }
+                ],
+                "slotTag": "opening_program_hook"
+              }
+            ]
+          },
+          {
+            "id": "para_8",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_5",
+                "kind": "narrative",
+                "text": "As an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation...",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "body_story_summary"
+              },
+              {
+                "id": "claim_6",
+                "kind": "narrative",
+                "text": "Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "body_story_proof"
+              },
+              {
+                "id": "claim_7",
+                "kind": "factual_profile",
+                "text": "I want two focused years to go from being an enthusiastic undergraduate researcher to someone who can own a non-trivial research project end to end.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_1c_3dee31cc"
+                  }
+                ],
+                "slotTag": "body_motivation"
+              }
+            ]
+          },
+          {
+            "id": "para_a",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_9",
+                "kind": "factual_program",
+                "text": "That is the scoped experiment I would want to continue inside the MS in Artificial Intelligence.",
+                "refs": [
+                  {
+                    "type": "program",
+                    "id": "program_mo44tk4r_1p_d2435d2c"
+                  }
+                ],
+                "slotTag": "closing_program_return"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "text": "## Prompt\n\n_Prompt_: In 150 words, describe a research problem you scoped end-to-end and what you would want to keep working on in this program.\n\n## Response\n\nI will answer plainly, with specifics that are checkable. The research problem I want to work on sits inside natural language processing, multi-agent reinforcement learning, on-device inference. The MS in Artificial Intelligence is exactly where that problem lives in coursework and faculty research.\n\nAs an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation... Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab. I want two focused years to go from being an enthusiastic undergraduate researcher to someone who can own a non-trivial research project end to end.\n\nThat is the scoped experiment I would want to continue inside the MS in Artificial Intelligence.",
+    "claimCount": 8,
+    "verifiableClaimCount": 6,
+    "wordCount": 167,
+    "generatedAt": "2026-04-18T09:25:48.467Z"
+  },
+  "critic": {
+    "notes": [
+      {
+        "code": "missing_university_anchor",
+        "severity": "warn",
+        "message": "Draft contains no university-level claim; consider adding a university-scope marker."
+      },
+      {
+        "code": "short_answer_word_limit_exceeded",
+        "severity": "block",
+        "message": "Short-answer word count 167 exceeds declared limit 150."
+      }
+    ],
+    "hasBlockers": true
+  },
+  "grounding": {
+    "supportedClaims": 6,
+    "unsupportedClaims": [],
+    "verifiableClaims": 6,
+    "stylisticClaims": 2,
+    "refsByType": {
+      "voice_anchor": 1,
+      "profile_field": 2,
+      "program": 2,
+      "story": 2
+    },
+    "entries": [
+      {
+        "claimId": "claim_1",
+        "slotTag": "prompt_echo",
+        "kind": "stylistic",
+        "refs": [],
+        "resolvedRefs": [],
+        "supported": true
+      },
+      {
+        "claimId": "claim_2",
+        "slotTag": "opening_voice",
+        "kind": "voice_stylistic",
+        "refs": [
+          {
+            "type": "voice_anchor",
+            "id": "voice_anchor_alex_rivera_2026"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "voice_anchor",
+            "id": "voice_anchor_alex_rivera_2026",
+            "resolved": true,
+            "note": "ready voice anchor"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_3",
+        "slotTag": "opening_focus",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_18_2621ae40"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_18_2621ae40",
+            "resolved": true,
+            "note": "attested profile_field.target_focus_areas"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_4",
+        "slotTag": "opening_program_hook",
+        "kind": "factual_program",
+        "refs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c",
+            "resolved": true,
+            "note": "graduate_program evidence admissions_page:UGA MS AI program page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_5",
+        "slotTag": "body_story_summary",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_6",
+        "slotTag": "body_story_proof",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_7",
+        "slotTag": "body_motivation",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_1c_3dee31cc"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_1c_3dee31cc",
+            "resolved": true,
+            "note": "attested profile_field.motivation_statement"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_9",
+        "slotTag": "closing_program_return",
+        "kind": "factual_program",
+        "refs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c",
+            "resolved": true,
+            "note": "graduate_program evidence admissions_page:UGA MS AI program page"
+          }
+        ],
+        "supported": true
+      }
+    ],
+    "passed": true
+  },
+  "style": {
+    "voiceAnchorId": "voice_anchor_alex_rivera_2026",
+    "meanSentenceLength": 15.18,
+    "voiceAnchorMeanSentenceLength": 18.1,
+    "sentenceLengthDelta": 2.92,
+    "firstPersonRatio": 0.0359,
+    "bannedPhraseHits": [],
+    "passed": false,
+    "notes": [
+      "first-person ratio 0.036 below required 0.052 (voice anchor ratio 0.105)."
+    ]
+  },
+  "readiness": "needs_user_input",
+  "rejectionReasons": [
+    "[critic:short_answer_word_limit_exceeded] Short-answer word count 167 exceeds declared limit 150.",
+    "[style] first-person ratio 0.036 below required 0.052 (voice anchor ratio 0.105)."
+  ],
+  "usageSummary": {
+    "profileFieldKeys": [
+      "motivation_statement",
+      "target_focus_areas"
+    ],
+    "verifiedStoryIds": [
+      "story_nlp_lab_retrieval"
+    ],
+    "programIds": [
+      "program_mo44tk4r_1p_d2435d2c"
+    ],
+    "fundingIds": [],
+    "personRoleIds": [],
+    "universityIds": [],
+    "professionalProfileIds": [],
+    "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+  }
+}

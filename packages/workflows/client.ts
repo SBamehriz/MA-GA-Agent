@@ -23,6 +23,21 @@ import {
   type OnboardingWorkflowResult,
   type OnboardingWorkflowState,
 } from "./onboarding";
+import {
+  runLocalResearchSweep,
+  type LocalResearchSweepInput,
+  type LocalResearchSweepResult,
+} from "./run-research-sweep";
+import {
+  runLocalWritingCycle,
+  type LocalWritingCycleInput,
+  type LocalWritingCycleResult,
+} from "./run-writing";
+import {
+  runLocalApplicationPrep,
+  type LocalApplicationPrepInput,
+  type LocalApplicationPrepResult,
+} from "./run-application-prep";
 
 export interface LocalOnboardingMemoryInput {
   attestation?: {
@@ -331,4 +346,13 @@ export const workflowClient = {
   kind: "local-onboarding-memory",
   reset: resetLocalWorkflowClient,
   runLocalOnboardingMemoryFlow,
+  runLocalResearchSweep: (
+    input: LocalResearchSweepInput,
+  ): Promise<LocalResearchSweepResult> => runLocalResearchSweep(input),
+  runLocalWritingCycle: (
+    input: LocalWritingCycleInput,
+  ): Promise<LocalWritingCycleResult> => runLocalWritingCycle(input),
+  runLocalApplicationPrep: (
+    input: LocalApplicationPrepInput,
+  ): Promise<LocalApplicationPrepResult> => runLocalApplicationPrep(input),
 } as const;

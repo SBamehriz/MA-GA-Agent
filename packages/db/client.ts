@@ -23,11 +23,22 @@ export interface LocalDbClient {
 
 function createEmptyState(): LocalDbState {
   return {
+    application: new Map(),
+    applicationArtifact: new Map(),
+    approvalRequest: new Map(),
+    department: new Map(),
     evidence: new Map(),
+    fundingOpportunity: new Map(),
+    graduateProgram: new Map(),
     onboardingAnswer: new Map(),
+    person: new Map(),
+    personRole: new Map(),
+    professionalProfile: new Map(),
     profileField: new Map(),
+    researchCycle: new Map(),
     sourceDocument: new Map(),
     story: new Map(),
+    university: new Map(),
     user: new Map(),
     userProfileRevision: new Map(),
     voiceAnchor: new Map()

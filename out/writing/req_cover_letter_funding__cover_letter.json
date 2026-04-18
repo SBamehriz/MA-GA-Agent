@@ -1,0 +1,585 @@
+{
+  "request": {
+    "id": "req_cover_letter_funding",
+    "documentType": "cover_letter",
+    "universityId": "university_mo44tk4p_1j_e759581f",
+    "programId": "program_mo44tk4r_1p_d2435d2c",
+    "fundingId": "funding_mo44tk4s_1t_4dd636f8",
+    "personRoleId": "personRole_mo44tk4t_23_b10160a0",
+    "professionalProfileId": "profile_mo44tk4u_2c_b18f2f51"
+  },
+  "draft": {
+    "requestId": "req_cover_letter_funding",
+    "documentType": "cover_letter",
+    "targetProgramId": "program_mo44tk4r_1p_d2435d2c",
+    "targetUniversityId": "university_mo44tk4p_1j_e759581f",
+    "targetFundingId": "funding_mo44tk4s_1t_4dd636f8",
+    "targetPersonRoleId": "personRole_mo44tk4t_23_b10160a0",
+    "title": "Cover letter — Graduate Research Assistantship - NLP Lab",
+    "sections": [
+      {
+        "id": "address",
+        "title": "",
+        "paragraphs": [
+          {
+            "id": "para_2",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_1",
+                "kind": "factual_contact",
+                "text": "Dear Priya Sharma,",
+                "refs": [
+                  {
+                    "type": "person_role",
+                    "id": "personRole_mo44tk4t_23_b10160a0"
+                  },
+                  {
+                    "type": "person",
+                    "id": "person_mo44tk4t_22_e38badd5"
+                  }
+                ],
+                "slotTag": "address_greeting"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "opening",
+        "title": "",
+        "paragraphs": [
+          {
+            "id": "para_f",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_3",
+                "kind": "voice_stylistic",
+                "text": "I am writing in plain sentences because I want the ask to be easy to check.",
+                "refs": [
+                  {
+                    "type": "voice_anchor",
+                    "id": "voice_anchor_alex_rivera_2026"
+                  }
+                ],
+                "slotTag": "opening_voice"
+              },
+              {
+                "id": "claim_4",
+                "kind": "factual_funding",
+                "text": "I am applying to the Graduate Research Assistantship - NLP Lab at University of Georgia.",
+                "refs": [
+                  {
+                    "type": "funding",
+                    "id": "funding_mo44tk4s_1t_4dd636f8"
+                  }
+                ],
+                "slotTag": "opening_funding_target"
+              },
+              {
+                "id": "claim_5",
+                "kind": "factual_profile",
+                "text": "I am Alex Rivera, a candidate for the MS in Artificial Intelligence starting Fall 2026.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4l_k_2390adcf"
+                  },
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_16_f3cd52b0"
+                  }
+                ],
+                "slotTag": "opening_identity"
+              },
+              {
+                "id": "claim_6",
+                "kind": "factual_program",
+                "text": "The MS in Artificial Intelligence concentration is Artificial Intelligence, which is what made this funding route the right one to pursue.",
+                "refs": [
+                  {
+                    "type": "program",
+                    "id": "program_mo44tk4r_1p_d2435d2c"
+                  }
+                ],
+                "slotTag": "opening_program_tie"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "body",
+        "title": "",
+        "paragraphs": [
+          {
+            "id": "para_g",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_7",
+                "kind": "factual_contact",
+                "text": "I am specifically interested in working with the Director of Graduate Studies on computer vision, machine learning.",
+                "refs": [
+                  {
+                    "type": "person_role",
+                    "id": "personRole_mo44tk4t_23_b10160a0"
+                  }
+                ],
+                "slotTag": "body_role_fit"
+              },
+              {
+                "id": "claim_8",
+                "kind": "narrative",
+                "text": "As an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation...",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "body_story_summary"
+              },
+              {
+                "id": "claim_9",
+                "kind": "narrative",
+                "text": "Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "body_story_proof"
+              },
+              {
+                "id": "claim_a",
+                "kind": "factual_contact",
+                "text": "I have read the group's public work and it is directly connected to the problem I just described.",
+                "refs": [
+                  {
+                    "type": "professional_profile",
+                    "id": "profile_mo44tk4u_2c_b18f2f51"
+                  }
+                ],
+                "slotTag": "body_profile_tie"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ask",
+        "title": "",
+        "paragraphs": [
+          {
+            "id": "para_h",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_b",
+                "kind": "factual_program",
+                "text": "I would like to be considered for this assistantship in tandem with my MS in Artificial Intelligence application.",
+                "refs": [
+                  {
+                    "type": "program",
+                    "id": "program_mo44tk4r_1p_d2435d2c"
+                  }
+                ],
+                "slotTag": "ask_program_tie"
+              },
+              {
+                "id": "claim_c",
+                "kind": "factual_funding",
+                "text": "I can commit to the funding's time expectation as described on the posting.",
+                "refs": [
+                  {
+                    "type": "funding",
+                    "id": "funding_mo44tk4s_1t_4dd636f8"
+                  }
+                ],
+                "slotTag": "ask_commitment"
+              },
+              {
+                "id": "claim_d",
+                "kind": "factual_profile",
+                "text": "I can be reached at alex.rivera@example.com.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_m_90d2a7b1"
+                  }
+                ],
+                "slotTag": "ask_contact"
+              },
+              {
+                "id": "claim_e",
+                "kind": "factual_profile",
+                "text": "Thank you for considering this application for MS in Computer Science / Artificial Intelligence track.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_14_dc429a45"
+                  }
+                ],
+                "slotTag": "ask_close"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "text": "Dear Priya Sharma,\n\nI am writing in plain sentences because I want the ask to be easy to check. I am applying to the Graduate Research Assistantship - NLP Lab at University of Georgia. I am Alex Rivera, a candidate for the MS in Artificial Intelligence starting Fall 2026. The MS in Artificial Intelligence concentration is Artificial Intelligence, which is what made this funding route the right one to pursue.\n\nI am specifically interested in working with the Director of Graduate Studies on computer vision, machine learning. As an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation... Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab. I have read the group's public work and it is directly connected to the problem I just described.\n\nI would like to be considered for this assistantship in tandem with my MS in Artificial Intelligence application. I can commit to the funding's time expectation as described on the posting. I can be reached at alex.rivera@example.com. Thank you for considering this application for MS in Computer Science / Artificial Intelligence track.",
+    "claimCount": 13,
+    "verifiableClaimCount": 12,
+    "wordCount": 213,
+    "generatedAt": "2026-04-18T09:25:48.467Z"
+  },
+  "critic": {
+    "notes": [
+      {
+        "code": "missing_university_anchor",
+        "severity": "warn",
+        "message": "Draft contains no university-level claim; consider adding a university-scope marker."
+      }
+    ],
+    "hasBlockers": false
+  },
+  "grounding": {
+    "supportedClaims": 12,
+    "unsupportedClaims": [],
+    "verifiableClaims": 12,
+    "stylisticClaims": 1,
+    "refsByType": {
+      "person_role": 2,
+      "person": 1,
+      "voice_anchor": 1,
+      "funding": 2,
+      "profile_field": 4,
+      "program": 2,
+      "story": 2,
+      "professional_profile": 1
+    },
+    "entries": [
+      {
+        "claimId": "claim_1",
+        "slotTag": "address_greeting",
+        "kind": "factual_contact",
+        "refs": [
+          {
+            "type": "person_role",
+            "id": "personRole_mo44tk4t_23_b10160a0"
+          },
+          {
+            "type": "person",
+            "id": "person_mo44tk4t_22_e38badd5"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "person_role",
+            "id": "personRole_mo44tk4t_23_b10160a0",
+            "resolved": true,
+            "note": "person_role evidence directory:UGA SoC directory — Priya Sharma (DGS)"
+          },
+          {
+            "type": "person",
+            "id": "person_mo44tk4t_22_e38badd5",
+            "resolved": true,
+            "note": "person Priya Sharma"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_3",
+        "slotTag": "opening_voice",
+        "kind": "voice_stylistic",
+        "refs": [
+          {
+            "type": "voice_anchor",
+            "id": "voice_anchor_alex_rivera_2026"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "voice_anchor",
+            "id": "voice_anchor_alex_rivera_2026",
+            "resolved": true,
+            "note": "ready voice anchor"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_4",
+        "slotTag": "opening_funding_target",
+        "kind": "factual_funding",
+        "refs": [
+          {
+            "type": "funding",
+            "id": "funding_mo44tk4s_1t_4dd636f8"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "funding",
+            "id": "funding_mo44tk4s_1t_4dd636f8",
+            "resolved": true,
+            "note": "funding_opportunity evidence lab_page:UGA NLP Lab Join Us page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_5",
+        "slotTag": "opening_identity",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4l_k_2390adcf"
+          },
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_16_f3cd52b0"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4l_k_2390adcf",
+            "resolved": true,
+            "note": "attested profile_field.full_name"
+          },
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_16_f3cd52b0",
+            "resolved": true,
+            "note": "attested profile_field.target_intake"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_6",
+        "slotTag": "opening_program_tie",
+        "kind": "factual_program",
+        "refs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c",
+            "resolved": true,
+            "note": "graduate_program evidence admissions_page:UGA MS AI program page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_7",
+        "slotTag": "body_role_fit",
+        "kind": "factual_contact",
+        "refs": [
+          {
+            "type": "person_role",
+            "id": "personRole_mo44tk4t_23_b10160a0"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "person_role",
+            "id": "personRole_mo44tk4t_23_b10160a0",
+            "resolved": true,
+            "note": "person_role evidence directory:UGA SoC directory — Priya Sharma (DGS)"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_8",
+        "slotTag": "body_story_summary",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_9",
+        "slotTag": "body_story_proof",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_a",
+        "slotTag": "body_profile_tie",
+        "kind": "factual_contact",
+        "refs": [
+          {
+            "type": "professional_profile",
+            "id": "profile_mo44tk4u_2c_b18f2f51"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "professional_profile",
+            "id": "profile_mo44tk4u_2c_b18f2f51",
+            "resolved": true,
+            "note": "professional_profile evidence directory:Priya Sharma faculty page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_b",
+        "slotTag": "ask_program_tie",
+        "kind": "factual_program",
+        "refs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c",
+            "resolved": true,
+            "note": "graduate_program evidence admissions_page:UGA MS AI program page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_c",
+        "slotTag": "ask_commitment",
+        "kind": "factual_funding",
+        "refs": [
+          {
+            "type": "funding",
+            "id": "funding_mo44tk4s_1t_4dd636f8"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "funding",
+            "id": "funding_mo44tk4s_1t_4dd636f8",
+            "resolved": true,
+            "note": "funding_opportunity evidence lab_page:UGA NLP Lab Join Us page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_d",
+        "slotTag": "ask_contact",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_m_90d2a7b1"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_m_90d2a7b1",
+            "resolved": true,
+            "note": "attested profile_field.primary_email"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_e",
+        "slotTag": "ask_close",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_14_dc429a45"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_14_dc429a45",
+            "resolved": true,
+            "note": "attested profile_field.target_degree"
+          }
+        ],
+        "supported": true
+      }
+    ],
+    "passed": true
+  },
+  "style": {
+    "voiceAnchorId": "voice_anchor_alex_rivera_2026",
+    "meanSentenceLength": 13.44,
+    "voiceAnchorMeanSentenceLength": 18.1,
+    "sentenceLengthDelta": 4.66,
+    "firstPersonRatio": 0.0657,
+    "bannedPhraseHits": [],
+    "passed": true,
+    "notes": []
+  },
+  "readiness": "ready",
+  "rejectionReasons": [],
+  "usageSummary": {
+    "profileFieldKeys": [
+      "full_name",
+      "primary_email",
+      "target_degree",
+      "target_intake"
+    ],
+    "verifiedStoryIds": [
+      "story_nlp_lab_retrieval"
+    ],
+    "programIds": [
+      "program_mo44tk4r_1p_d2435d2c"
+    ],
+    "fundingIds": [
+      "funding_mo44tk4s_1t_4dd636f8"
+    ],
+    "personRoleIds": [
+      "personRole_mo44tk4t_23_b10160a0"
+    ],
+    "universityIds": [],
+    "professionalProfileIds": [
+      "profile_mo44tk4u_2c_b18f2f51"
+    ],
+    "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+  }
+}

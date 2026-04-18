@@ -1,0 +1,401 @@
+{
+  "$schema": "local-onboarding-sample-v0",
+  "description": "Realistic local onboarding fixture for the MA-GA-Agent onboarding-memory slice. One CS/AI-focused MS applicant with resume, transcript, writing sample, structured answers, required profile fields, three story seeds, and a voice anchor sample. Used by scripts/run-onboarding.ts.",
+  "initiatedBy": "local_script",
+  "attestation": {
+    "performedAt": "2026-04-17T14:30:00.000Z"
+  },
+  "ingestion": {
+    "user": {
+      "id": "user_alex_rivera_local",
+      "email": "alex.rivera@example.com",
+      "displayName": "Alex Rivera",
+      "preferences": {
+        "locale": "en-US",
+        "timezone": "America/New_York"
+      }
+    },
+    "intakeSummary": "Alex Rivera, BS Computer Science (UGA, 2025, GPA 3.82), applying to MS in AI / CS-AI programs for Fall 2026 intake. Strong NLP and multi-agent RL background. Requires full tuition coverage plus stipend, so GA / TA / RA funding is a hard requirement.",
+    "sourceDocuments": [
+      {
+        "kind": "resume",
+        "label": "Alex Rivera - Resume (2026 applications)",
+        "fileName": "alex-rivera-resume-2026.pdf",
+        "mimeType": "application/pdf",
+        "storageRef": "local://fixtures/seeds/materials/alex-rivera-resume-2026.pdf",
+        "sha256": "fixture-sha256-resume-2026",
+        "extractedText": "Alex Rivera. Bachelor of Science in Computer Science, University of Georgia, May 2025. Cumulative GPA 3.82 / 4.00. Research: undergraduate researcher, UGA NLP Lab, Sep 2023 - May 2025, advised by Prof. J. Morales. Led a project applying transformer-based retrieval to low-resource code search; contributed to an ACL workshop paper on span-level error analysis. Industry: software engineering intern, Acme Robotics, Summer 2024; improved on-device speech-to-intent latency by 38% with a distilled intent classifier. Projects: multi-agent reinforcement learning coordination for household pantry restocking (Python, PettingZoo, PyTorch); transformer-based code summarizer for Python snippets (Hugging Face Transformers); on-device speech-to-intent prototype using Conformer encoder with INT8 quantization. Coursework highlights: Machine Learning, Natural Language Processing, Deep Learning, Artificial Intelligence, Algorithms, Linear Algebra, Probability.",
+        "metadata": {
+          "pages": 2,
+          "format": "pdf",
+          "source": "fixture"
+        }
+      },
+      {
+        "kind": "transcript",
+        "label": "University of Georgia - Undergraduate Transcript",
+        "fileName": "uga-undergraduate-transcript.pdf",
+        "mimeType": "application/pdf",
+        "storageRef": "local://fixtures/seeds/materials/uga-undergraduate-transcript.pdf",
+        "sha256": "fixture-sha256-transcript-uga",
+        "extractedText": "University of Georgia. Bachelor of Science in Computer Science, awarded May 2025. Cumulative GPA 3.82 / 4.00 across 123 credit hours. Upper-division coursework: CSCI 4380 Data Mining (A), CSCI 4360 Data Science (A), CSCI 4540 Natural Language Processing (A), CSCI 4550 Artificial Intelligence (A), CSCI 4560 Deep Learning (A-), CSCI 4470 Algorithms (A), CSCI 4730 Operating Systems (B+), MATH 3000 Linear Algebra (A), MATH 4600 Probability (A-). Honors: Dean's List, Fall 2023 through Spring 2025. Independent study CSCI 4960R in NLP research under Prof. J. Morales, two semesters, grade A.",
+        "metadata": {
+          "institution": "University of Georgia",
+          "degree": "BS Computer Science",
+          "conferred": "2025-05-10",
+          "source": "fixture"
+        }
+      },
+      {
+        "kind": "writing_sample",
+        "label": "Personal voice anchor - 2025 reflective essay",
+        "fileName": "voice-anchor-reflective-essay.md",
+        "mimeType": "text/markdown",
+        "storageRef": "local://fixtures/seeds/materials/voice-anchor-reflective-essay.md",
+        "sha256": "fixture-sha256-voice-anchor-2025",
+        "extractedText": "I write in plain sentences because I want the argument to be checkable. When I describe a project I try to say the problem, the constraint, and the thing I actually changed, in that order. I would rather be specific than sound impressive. If a claim cannot be grounded in something I built or measured, I cut it.\n\nI care about systems that learn in places where data is scarce and where a wrong answer is visible. My favorite work combines careful evaluation with a clear story about what the model is doing and why. I try to treat benchmarks as diagnostic tools, not as scoreboards, and I push back when an ablation is missing.\n\nOutside the lab I am drawn to collaborators who treat disagreements as useful signals. I am happy to be corrected quickly, and I expect the same back. The research I want to do over the next two years sits at the intersection of language models, multi-agent coordination, and on-device inference, and I want advisors who make room for focused, scope-limited experiments over broad but thin projects.",
+        "metadata": {
+          "source": "fixture",
+          "topic": "voice_anchor"
+        }
+      }
+    ],
+    "answers": [
+      {
+        "questionKey": "full_name",
+        "prompt": "What is your full legal name?",
+        "answer": "Alex Rivera",
+        "answerFormat": "short_text"
+      },
+      {
+        "questionKey": "primary_email",
+        "prompt": "What email should we use for your applications?",
+        "answer": "alex.rivera@example.com",
+        "answerFormat": "short_text"
+      },
+      {
+        "questionKey": "country_of_residence",
+        "prompt": "Where do you currently live?",
+        "answer": "United States",
+        "answerFormat": "short_text"
+      },
+      {
+        "questionKey": "citizenship_status",
+        "prompt": "What is your citizenship or residency status?",
+        "answer": "US citizen",
+        "answerFormat": "short_text"
+      },
+      {
+        "questionKey": "undergraduate_institution",
+        "prompt": "Where did you complete your undergraduate degree?",
+        "answer": "University of Georgia",
+        "answerFormat": "short_text",
+        "sourceDocumentKinds": ["transcript"]
+      },
+      {
+        "questionKey": "undergraduate_degree",
+        "prompt": "What degree did you earn?",
+        "answer": "Bachelor of Science in Computer Science",
+        "answerFormat": "short_text",
+        "sourceDocumentKinds": ["transcript"]
+      },
+      {
+        "questionKey": "undergraduate_gpa",
+        "prompt": "What was your cumulative GPA and scale?",
+        "answer": "3.82 / 4.00",
+        "answerFormat": "short_text",
+        "sourceDocumentKinds": ["transcript"]
+      },
+      {
+        "questionKey": "graduation_year",
+        "prompt": "What year did you (or will you) graduate?",
+        "answer": 2025,
+        "answerFormat": "number",
+        "sourceDocumentKinds": ["transcript"]
+      },
+      {
+        "questionKey": "target_degree",
+        "prompt": "What degree are you applying for?",
+        "answer": "MS in Computer Science / Artificial Intelligence track",
+        "answerFormat": "short_text"
+      },
+      {
+        "questionKey": "target_intake",
+        "prompt": "Which intake term are you targeting?",
+        "answer": "Fall 2026",
+        "answerFormat": "short_text"
+      },
+      {
+        "questionKey": "target_focus_areas",
+        "prompt": "What research or application areas are you most excited about?",
+        "answer": [
+          "natural language processing",
+          "multi-agent reinforcement learning",
+          "on-device inference"
+        ],
+        "answerFormat": "list"
+      },
+      {
+        "questionKey": "funding_need",
+        "prompt": "What is your funding situation?",
+        "answer": "Hard requirement for full tuition coverage plus stipend via GA / TA / RA or fellowship.",
+        "answerFormat": "long_text"
+      },
+      {
+        "questionKey": "motivation_statement",
+        "prompt": "Why a research-adjacent MS, in one paragraph?",
+        "answer": "I want two focused years to go from being an enthusiastic undergraduate researcher to someone who can own a non-trivial research project end to end. My undergrad NLP work and multi-agent RL project convinced me that the combination of language-grounded reasoning and coordination problems is where I want to spend my time, and I want access to a lab that takes that combination seriously.",
+        "answerFormat": "long_text",
+        "sourceDocumentKinds": ["resume"]
+      },
+      {
+        "questionKey": "key_projects",
+        "prompt": "List your most important projects or experiences.",
+        "answer": [
+          "UGA NLP Lab - retrieval-augmented code search, span-level error analysis",
+          "Multi-agent RL pantry coordination with PettingZoo and PyTorch",
+          "Acme Robotics internship - on-device speech-to-intent latency reduction",
+          "Transformer code summarizer using Hugging Face Transformers"
+        ],
+        "answerFormat": "list",
+        "sourceDocumentKinds": ["resume"]
+      },
+      {
+        "questionKey": "voice_anchor_self_description",
+        "prompt": "In your own words, describe how you like to write about your work.",
+        "answer": "Plain sentences, one argument per paragraph, claims grounded in something I built or measured.",
+        "answerFormat": "long_text",
+        "sourceDocumentKinds": ["writing_sample"]
+      }
+    ],
+    "profileFields": [
+      {
+        "fieldKey": "full_name",
+        "fieldLabel": "Full legal name",
+        "category": "identity",
+        "value": "Alex Rivera",
+        "isRequired": true,
+        "sourceAnswerKeys": ["full_name"]
+      },
+      {
+        "fieldKey": "primary_email",
+        "fieldLabel": "Primary email",
+        "category": "contact",
+        "value": "alex.rivera@example.com",
+        "isRequired": true,
+        "sourceAnswerKeys": ["primary_email"]
+      },
+      {
+        "fieldKey": "country_of_residence",
+        "fieldLabel": "Country of residence",
+        "category": "contact",
+        "value": "United States",
+        "isRequired": true,
+        "sourceAnswerKeys": ["country_of_residence"]
+      },
+      {
+        "fieldKey": "citizenship_status",
+        "fieldLabel": "Citizenship / residency status",
+        "category": "citizenship",
+        "value": "US citizen",
+        "isRequired": true,
+        "sourceAnswerKeys": ["citizenship_status"]
+      },
+      {
+        "fieldKey": "undergraduate_institution",
+        "fieldLabel": "Undergraduate institution",
+        "category": "academics",
+        "value": "University of Georgia",
+        "isRequired": true,
+        "sourceAnswerKeys": ["undergraduate_institution"],
+        "sourceDocumentKinds": ["transcript"]
+      },
+      {
+        "fieldKey": "undergraduate_degree",
+        "fieldLabel": "Undergraduate degree",
+        "category": "academics",
+        "value": "Bachelor of Science in Computer Science",
+        "isRequired": true,
+        "sourceAnswerKeys": ["undergraduate_degree"],
+        "sourceDocumentKinds": ["transcript"]
+      },
+      {
+        "fieldKey": "undergraduate_gpa",
+        "fieldLabel": "Undergraduate GPA",
+        "category": "academics",
+        "value": "3.82 / 4.00",
+        "isRequired": true,
+        "sourceAnswerKeys": ["undergraduate_gpa"],
+        "sourceDocumentKinds": ["transcript"]
+      },
+      {
+        "fieldKey": "graduation_year",
+        "fieldLabel": "Graduation year",
+        "category": "academics",
+        "value": 2025,
+        "isRequired": true,
+        "sourceAnswerKeys": ["graduation_year"],
+        "sourceDocumentKinds": ["transcript"]
+      },
+      {
+        "fieldKey": "target_degree",
+        "fieldLabel": "Target degree",
+        "category": "preferences",
+        "value": "MS in Computer Science / Artificial Intelligence track",
+        "isRequired": true,
+        "sourceAnswerKeys": ["target_degree"]
+      },
+      {
+        "fieldKey": "target_intake",
+        "fieldLabel": "Target intake term",
+        "category": "preferences",
+        "value": "Fall 2026",
+        "isRequired": true,
+        "sourceAnswerKeys": ["target_intake"]
+      },
+      {
+        "fieldKey": "target_focus_areas",
+        "fieldLabel": "Target research focus areas",
+        "category": "preferences",
+        "value": [
+          "natural language processing",
+          "multi-agent reinforcement learning",
+          "on-device inference"
+        ],
+        "isRequired": true,
+        "sourceAnswerKeys": ["target_focus_areas"]
+      },
+      {
+        "fieldKey": "funding_need",
+        "fieldLabel": "Funding need",
+        "category": "preferences",
+        "value": "Hard requirement for full tuition plus stipend via GA / TA / RA or fellowship.",
+        "isRequired": true,
+        "sourceAnswerKeys": ["funding_need"]
+      },
+      {
+        "fieldKey": "motivation_statement",
+        "fieldLabel": "Motivation statement",
+        "category": "writing",
+        "value": "I want two focused years to go from being an enthusiastic undergraduate researcher to someone who can own a non-trivial research project end to end.",
+        "isRequired": false,
+        "sourceAnswerKeys": ["motivation_statement"],
+        "sourceDocumentKinds": ["resume"]
+      },
+      {
+        "fieldKey": "key_projects",
+        "fieldLabel": "Key projects",
+        "category": "projects",
+        "value": [
+          "UGA NLP Lab - retrieval-augmented code search",
+          "Multi-agent RL pantry coordination",
+          "Acme Robotics - on-device speech-to-intent",
+          "Transformer code summarizer"
+        ],
+        "isRequired": false,
+        "sourceAnswerKeys": ["key_projects"],
+        "sourceDocumentKinds": ["resume"]
+      }
+    ]
+  },
+  "storyMemory": {
+    "story_seeds": [
+      {
+        "id": "story_nlp_lab_retrieval",
+        "title_hint": "Retrieval-augmented code search in the UGA NLP Lab",
+        "narrative": "As an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation over span granularity, and ran the training loop on our shared cluster. The eventual paper contribution was a span-level error analysis that clarified which retrieval failures were about lexical drift and which were about semantic reasoning. The work was not glamorous. It was a lot of careful bookkeeping and a lot of plots that looked almost identical until one of them did not.",
+        "themes": ["research", "natural language processing", "retrieval", "evaluation"],
+        "proof_points": [
+          "Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab.",
+          "Designed an ablation over span granularity and built the evaluation harness.",
+          "Authored a span-level error analysis that became part of a workshop paper contribution."
+        ],
+        "source_refs": [
+          {
+            "ref_id": "local://fixtures/seeds/materials/alex-rivera-resume-2026.pdf",
+            "ref_type": "resume",
+            "label": "Resume: UGA NLP Lab researcher"
+          },
+          {
+            "ref_id": "answer:key_projects",
+            "ref_type": "onboarding_answer",
+            "label": "Onboarding answer: UGA NLP Lab - retrieval-augmented code search"
+          }
+        ],
+        "verification_notes": [
+          "Cross-checked against resume line about UGA NLP Lab and independent study transcript entry."
+        ]
+      },
+      {
+        "id": "story_multi_agent_rl_pantry",
+        "title_hint": "Multi-agent RL for pantry restocking",
+        "narrative": "I built a multi-agent reinforcement learning environment that modeled a shared household pantry as a coordination game between independent restocking agents. The interesting part was not the reward function; it was the failure mode. Two agents with almost identical policies converged to a state where neither restocked anything because both expected the other to do it. I added a cheap communication channel and an explicit turn-taking prior and ran a small ablation. The result was modest but honest: with communication, throughput improved; without it, coordination collapsed. It was the first project where I felt like I was doing research, not just coursework.",
+        "themes": ["multi-agent systems", "reinforcement learning", "coordination"],
+        "proof_points": [
+          "Implemented a multi-agent RL environment in PettingZoo and PyTorch around a pantry-restocking coordination game.",
+          "Diagnosed a free-rider failure mode and ran an ablation comparing no-communication baselines against a cheap communication channel.",
+          "Reported that coordination collapsed without communication and throughput improved modestly with it."
+        ],
+        "source_refs": [
+          {
+            "ref_id": "local://fixtures/seeds/materials/alex-rivera-resume-2026.pdf",
+            "ref_type": "resume",
+            "label": "Resume: multi-agent RL pantry coordination project"
+          },
+          {
+            "ref_id": "project_marl_pantry",
+            "ref_type": "project",
+            "label": "Project: MARL pantry coordination"
+          }
+        ],
+        "verification_notes": [
+          "Confirmed narrative against resume project line about PettingZoo / PyTorch multi-agent RL."
+        ]
+      },
+      {
+        "id": "story_acme_speech_intent",
+        "title_hint": "On-device speech-to-intent latency at Acme Robotics",
+        "narrative": "At Acme Robotics I was handed a speech-to-intent model that ran too slowly on the target device. My job was to make it faster without making it worse. I profiled the hot path, replaced the backbone with a distilled Conformer encoder, quantized it to INT8, and added a short caching window for the most common intents. The latency came down by about 38% and the intent accuracy barely moved. I remember the summer mostly as a series of small, measurable improvements rather than a single big idea, and I think that is the honest way to talk about it.",
+        "themes": ["on-device inference", "model distillation", "systems"],
+        "proof_points": [
+          "Replaced the speech-to-intent backbone with a distilled Conformer encoder and INT8 quantization.",
+          "Added an intent-level caching window for the most common requests to avoid recomputation.",
+          "Delivered a 38% latency reduction on the target device without hurting intent accuracy."
+        ],
+        "source_refs": [
+          {
+            "ref_id": "local://fixtures/seeds/materials/alex-rivera-resume-2026.pdf",
+            "ref_type": "resume",
+            "label": "Resume: Acme Robotics internship"
+          },
+          {
+            "ref_id": "answer:key_projects",
+            "ref_type": "onboarding_answer",
+            "label": "Onboarding answer: Acme Robotics - on-device speech-to-intent"
+          }
+        ],
+        "verification_notes": [
+          "Matched to resume line about Acme Robotics summer 2024 and speech-to-intent latency reduction."
+        ]
+      }
+    ],
+    "voice_anchor_input": {
+      "id": "voice_anchor_alex_rivera_2026",
+      "sample_text": "I write in plain sentences because I want the argument to be checkable. When I describe a project I try to say the problem, the constraint, and the thing I actually changed, in that order. I would rather be specific than sound impressive. If a claim cannot be grounded in something I built or measured, I cut it.\n\nI care about systems that learn in places where data is scarce and where a wrong answer is visible. My favorite work combines careful evaluation with a clear story about what the model is doing and why. I try to treat benchmarks as diagnostic tools, not as scoreboards, and I push back when an ablation is missing.\n\nOutside the lab I am drawn to collaborators who treat disagreements as useful signals. I am happy to be corrected quickly, and I expect the same back. The research I want to do over the next two years sits at the intersection of language models, multi-agent coordination, and on-device inference, and I want advisors who make room for focused, scope-limited experiments over broad but thin projects.",
+      "source_refs": [
+        {
+          "ref_id": "local://fixtures/seeds/materials/voice-anchor-reflective-essay.md",
+          "ref_type": "writing_sample",
+          "label": "Voice anchor: 2025 reflective essay"
+        }
+      ],
+      "notes": [
+        "Three paragraphs, first-person, describes how the applicant writes about their own work."
+      ]
+    }
+  },
+  "verifiedStoryIds": [
+    "story_nlp_lab_retrieval",
+    "story_multi_agent_rl_pantry"
+  ]
+}

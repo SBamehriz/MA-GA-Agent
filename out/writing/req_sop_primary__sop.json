@@ -1,0 +1,822 @@
+{
+  "request": {
+    "id": "req_sop_primary",
+    "documentType": "sop",
+    "universityId": "university_mo44tk4p_1j_e759581f",
+    "programId": "program_mo44tk4r_1p_d2435d2c",
+    "fundingId": "funding_mo44tk4s_1t_4dd636f8",
+    "personRoleId": "personRole_mo44tk4t_23_b10160a0",
+    "professionalProfileId": "profile_mo44tk4u_2c_b18f2f51"
+  },
+  "draft": {
+    "requestId": "req_sop_primary",
+    "documentType": "sop",
+    "targetProgramId": "program_mo44tk4r_1p_d2435d2c",
+    "targetUniversityId": "university_mo44tk4p_1j_e759581f",
+    "targetFundingId": "funding_mo44tk4s_1t_4dd636f8",
+    "targetPersonRoleId": "personRole_mo44tk4t_23_b10160a0",
+    "title": "SOP — MS in Artificial Intelligence @ University of Georgia",
+    "sections": [
+      {
+        "id": "opening",
+        "title": "Opening",
+        "paragraphs": [
+          {
+            "id": "para_6",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_1",
+                "kind": "voice_stylistic",
+                "text": "I try to write about my work the way I think about it — plainly, and grounded in what I actually built or measured.",
+                "refs": [
+                  {
+                    "type": "voice_anchor",
+                    "id": "voice_anchor_alex_rivera_2026"
+                  }
+                ],
+                "slotTag": "opening_voice"
+              },
+              {
+                "id": "claim_2",
+                "kind": "factual_profile",
+                "text": "I am Alex Rivera, applying to the MS in Artificial Intelligence at University of Georgia for Fall 2026.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4l_k_2390adcf"
+                  },
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_16_f3cd52b0"
+                  }
+                ],
+                "slotTag": "opening_identity"
+              },
+              {
+                "id": "claim_3",
+                "kind": "factual_program",
+                "text": "The program's concentration in Artificial Intelligence and its core-fit curriculum match where I want to spend the next two years.",
+                "refs": [
+                  {
+                    "type": "program",
+                    "id": "program_mo44tk4r_1p_d2435d2c"
+                  }
+                ],
+                "slotTag": "opening_program_hook"
+              },
+              {
+                "id": "claim_4",
+                "kind": "factual_university",
+                "text": "University of Georgia is where this work lives at the scale I need.",
+                "refs": [
+                  {
+                    "type": "university",
+                    "id": "university_mo44tk4p_1j_e759581f"
+                  }
+                ],
+                "slotTag": "opening_university_hook"
+              },
+              {
+                "id": "claim_5",
+                "kind": "factual_profile",
+                "text": "I want two focused years to go from being an enthusiastic undergraduate researcher to someone who can own a non-trivial research project end to end.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_1c_3dee31cc"
+                  }
+                ],
+                "slotTag": "opening_motivation"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "background",
+        "title": "Research background",
+        "paragraphs": [
+          {
+            "id": "para_h",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_f",
+                "kind": "factual_profile",
+                "text": "I completed my Bachelor of Science in Computer Science at University of Georgia.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_s_35c729b4"
+                  },
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_v_34c46105"
+                  }
+                ],
+                "slotTag": "background_credentials"
+              },
+              {
+                "id": "claim_g",
+                "kind": "factual_profile",
+                "text": "My cumulative GPA was 3.82 / 4.00.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_y_bbdc8d56"
+                  }
+                ],
+                "slotTag": "background_credentials_gpa"
+              }
+            ]
+          },
+          {
+            "id": "para_a",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_7",
+                "kind": "narrative",
+                "text": "As an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation...",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "background_story_1_summary"
+              },
+              {
+                "id": "claim_8",
+                "kind": "narrative",
+                "text": "Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "background_story_1_proof_1"
+              },
+              {
+                "id": "claim_9",
+                "kind": "narrative",
+                "text": "Designed an ablation over span granularity and built the evaluation harness.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "background_story_1_proof_2"
+              }
+            ]
+          },
+          {
+            "id": "para_e",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_b",
+                "kind": "narrative",
+                "text": "I built a multi-agent reinforcement learning environment that modeled a shared household pantry as a coordination game between independent restocking agents. The interesting part was not the reward function; it was the failure mode. Two agents with almost identical policies...",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_multi_agent_rl_pantry"
+                  }
+                ],
+                "slotTag": "background_story_2_summary"
+              },
+              {
+                "id": "claim_c",
+                "kind": "narrative",
+                "text": "Implemented a multi-agent RL environment in PettingZoo and PyTorch around a pantry-restocking coordination game.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_multi_agent_rl_pantry"
+                  }
+                ],
+                "slotTag": "background_story_2_proof_1"
+              },
+              {
+                "id": "claim_d",
+                "kind": "narrative",
+                "text": "Diagnosed a free-rider failure mode and ran an ablation comparing no-communication baselines against a cheap communication channel.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_multi_agent_rl_pantry"
+                  }
+                ],
+                "slotTag": "background_story_2_proof_2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fit",
+        "title": "Why this program",
+        "paragraphs": [
+          {
+            "id": "para_m",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_i",
+                "kind": "factual_program",
+                "text": "The MS in Artificial Intelligence is structured around the coursework and research I want to be inside of: strong:artificial intelligence, strong:machine learning, strong:deep learning, strong:computer vision.",
+                "refs": [
+                  {
+                    "type": "program",
+                    "id": "program_mo44tk4r_1p_d2435d2c"
+                  }
+                ],
+                "slotTag": "fit_program_curriculum"
+              },
+              {
+                "id": "claim_j",
+                "kind": "factual_profile",
+                "text": "My own focus areas — natural language processing, multi-agent reinforcement learning, on-device inference — map directly onto that menu.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_18_2621ae40"
+                  }
+                ],
+                "slotTag": "fit_focus_areas"
+              },
+              {
+                "id": "claim_k",
+                "kind": "factual_contact",
+                "text": "I am specifically interested in working with Director of Graduate Studies, whose research in computer vision, machine learning overlaps with the problems I want to work on.",
+                "refs": [
+                  {
+                    "type": "person_role",
+                    "id": "personRole_mo44tk4t_23_b10160a0"
+                  }
+                ],
+                "slotTag": "fit_pi"
+              },
+              {
+                "id": "claim_l",
+                "kind": "factual_contact",
+                "text": "Their published work in computer vision is part of what convinced me the fit was real.",
+                "refs": [
+                  {
+                    "type": "professional_profile",
+                    "id": "profile_mo44tk4u_2c_b18f2f51"
+                  }
+                ],
+                "slotTag": "fit_pi_profile"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "closing",
+        "title": "Closing",
+        "paragraphs": [
+          {
+            "id": "para_q",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_n",
+                "kind": "factual_funding",
+                "text": "I am also applying to the Graduate Research Assistantship - NLP Lab, which (per its posting) supports this kind of work and is essential to my plan.",
+                "refs": [
+                  {
+                    "type": "funding",
+                    "id": "funding_mo44tk4s_1t_4dd636f8"
+                  }
+                ],
+                "slotTag": "closing_funding"
+              },
+              {
+                "id": "claim_o",
+                "kind": "voice_stylistic",
+                "text": "I want the next two years to be focused and checkable, and I want advisors who make room for scope-limited experiments over broad, thin projects.",
+                "refs": [
+                  {
+                    "type": "voice_anchor",
+                    "id": "voice_anchor_alex_rivera_2026"
+                  }
+                ],
+                "slotTag": "closing_voice"
+              },
+              {
+                "id": "claim_p",
+                "kind": "factual_profile",
+                "text": "I am applying for MS in Computer Science / Artificial Intelligence track and I am ready to contribute to the lab on day one.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_14_dc429a45"
+                  }
+                ],
+                "slotTag": "closing_ask"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "text": "## Opening\n\nI try to write about my work the way I think about it — plainly, and grounded in what I actually built or measured. I am Alex Rivera, applying to the MS in Artificial Intelligence at University of Georgia for Fall 2026. The program's concentration in Artificial Intelligence and its core-fit curriculum match where I want to spend the next two years. University of Georgia is where this work lives at the scale I need. I want two focused years to go from being an enthusiastic undergraduate researcher to someone who can own a non-trivial research project end to end.\n\n## Research background\n\nI completed my Bachelor of Science in Computer Science at University of Georgia. My cumulative GPA was 3.82 / 4.00.\n\nAs an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation... Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab. Designed an ablation over span granularity and built the evaluation harness.\n\nI built a multi-agent reinforcement learning environment that modeled a shared household pantry as a coordination game between independent restocking agents. The interesting part was not the reward function; it was the failure mode. Two agents with almost identical policies... Implemented a multi-agent RL environment in PettingZoo and PyTorch around a pantry-restocking coordination game. Diagnosed a free-rider failure mode and ran an ablation comparing no-communication baselines against a cheap communication channel.\n\n## Why this program\n\nThe MS in Artificial Intelligence is structured around the coursework and research I want to be inside of: strong:artificial intelligence, strong:machine learning, strong:deep learning, strong:computer vision. My own focus areas — natural language processing, multi-agent reinforcement learning, on-device inference — map directly onto that menu. I am specifically interested in working with Director of Graduate Studies, whose research in computer vision, machine learning overlaps with the problems I want to work on. Their published work in computer vision is part of what convinced me the fit was real.\n\n## Closing\n\nI am also applying to the Graduate Research Assistantship - NLP Lab, which (per its posting) supports this kind of work and is essential to my plan. I want the next two years to be focused and checkable, and I want advisors who make room for scope-limited experiments over broad, thin projects. I am applying for MS in Computer Science / Artificial Intelligence track and I am ready to contribute to the lab on day one.",
+    "claimCount": 20,
+    "verifiableClaimCount": 18,
+    "wordCount": 433,
+    "generatedAt": "2026-04-18T09:25:48.465Z"
+  },
+  "critic": {
+    "notes": [],
+    "hasBlockers": false
+  },
+  "grounding": {
+    "supportedClaims": 18,
+    "unsupportedClaims": [],
+    "verifiableClaims": 18,
+    "stylisticClaims": 2,
+    "refsByType": {
+      "voice_anchor": 2,
+      "profile_field": 8,
+      "program": 2,
+      "university": 1,
+      "story": 6,
+      "person_role": 1,
+      "professional_profile": 1,
+      "funding": 1
+    },
+    "entries": [
+      {
+        "claimId": "claim_1",
+        "slotTag": "opening_voice",
+        "kind": "voice_stylistic",
+        "refs": [
+          {
+            "type": "voice_anchor",
+            "id": "voice_anchor_alex_rivera_2026"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "voice_anchor",
+            "id": "voice_anchor_alex_rivera_2026",
+            "resolved": true,
+            "note": "ready voice anchor"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_2",
+        "slotTag": "opening_identity",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4l_k_2390adcf"
+          },
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_16_f3cd52b0"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4l_k_2390adcf",
+            "resolved": true,
+            "note": "attested profile_field.full_name"
+          },
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_16_f3cd52b0",
+            "resolved": true,
+            "note": "attested profile_field.target_intake"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_3",
+        "slotTag": "opening_program_hook",
+        "kind": "factual_program",
+        "refs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c",
+            "resolved": true,
+            "note": "graduate_program evidence admissions_page:UGA MS AI program page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_4",
+        "slotTag": "opening_university_hook",
+        "kind": "factual_university",
+        "refs": [
+          {
+            "type": "university",
+            "id": "university_mo44tk4p_1j_e759581f"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "university",
+            "id": "university_mo44tk4p_1j_e759581f",
+            "resolved": true,
+            "note": "university evidence user_attested:UGA about page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_5",
+        "slotTag": "opening_motivation",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_1c_3dee31cc"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_1c_3dee31cc",
+            "resolved": true,
+            "note": "attested profile_field.motivation_statement"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_f",
+        "slotTag": "background_credentials",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_s_35c729b4"
+          },
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_v_34c46105"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_s_35c729b4",
+            "resolved": true,
+            "note": "attested profile_field.undergraduate_institution"
+          },
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_v_34c46105",
+            "resolved": true,
+            "note": "attested profile_field.undergraduate_degree"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_g",
+        "slotTag": "background_credentials_gpa",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_y_bbdc8d56"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_y_bbdc8d56",
+            "resolved": true,
+            "note": "attested profile_field.undergraduate_gpa"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_7",
+        "slotTag": "background_story_1_summary",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_8",
+        "slotTag": "background_story_1_proof_1",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_9",
+        "slotTag": "background_story_1_proof_2",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_b",
+        "slotTag": "background_story_2_summary",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry",
+            "resolved": true,
+            "note": "verified story \"Multi-agent RL for pantry restocking\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_c",
+        "slotTag": "background_story_2_proof_1",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry",
+            "resolved": true,
+            "note": "verified story \"Multi-agent RL for pantry restocking\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_d",
+        "slotTag": "background_story_2_proof_2",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry",
+            "resolved": true,
+            "note": "verified story \"Multi-agent RL for pantry restocking\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_i",
+        "slotTag": "fit_program_curriculum",
+        "kind": "factual_program",
+        "refs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c",
+            "resolved": true,
+            "note": "graduate_program evidence admissions_page:UGA MS AI program page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_j",
+        "slotTag": "fit_focus_areas",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_18_2621ae40"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_18_2621ae40",
+            "resolved": true,
+            "note": "attested profile_field.target_focus_areas"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_k",
+        "slotTag": "fit_pi",
+        "kind": "factual_contact",
+        "refs": [
+          {
+            "type": "person_role",
+            "id": "personRole_mo44tk4t_23_b10160a0"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "person_role",
+            "id": "personRole_mo44tk4t_23_b10160a0",
+            "resolved": true,
+            "note": "person_role evidence directory:UGA SoC directory — Priya Sharma (DGS)"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_l",
+        "slotTag": "fit_pi_profile",
+        "kind": "factual_contact",
+        "refs": [
+          {
+            "type": "professional_profile",
+            "id": "profile_mo44tk4u_2c_b18f2f51"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "professional_profile",
+            "id": "profile_mo44tk4u_2c_b18f2f51",
+            "resolved": true,
+            "note": "professional_profile evidence directory:Priya Sharma faculty page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_n",
+        "slotTag": "closing_funding",
+        "kind": "factual_funding",
+        "refs": [
+          {
+            "type": "funding",
+            "id": "funding_mo44tk4s_1t_4dd636f8"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "funding",
+            "id": "funding_mo44tk4s_1t_4dd636f8",
+            "resolved": true,
+            "note": "funding_opportunity evidence lab_page:UGA NLP Lab Join Us page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_o",
+        "slotTag": "closing_voice",
+        "kind": "voice_stylistic",
+        "refs": [
+          {
+            "type": "voice_anchor",
+            "id": "voice_anchor_alex_rivera_2026"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "voice_anchor",
+            "id": "voice_anchor_alex_rivera_2026",
+            "resolved": true,
+            "note": "ready voice anchor"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_p",
+        "slotTag": "closing_ask",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_14_dc429a45"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_14_dc429a45",
+            "resolved": true,
+            "note": "attested profile_field.target_degree"
+          }
+        ],
+        "supported": true
+      }
+    ],
+    "passed": true
+  },
+  "style": {
+    "voiceAnchorId": "voice_anchor_alex_rivera_2026",
+    "meanSentenceLength": 15,
+    "voiceAnchorMeanSentenceLength": 18.1,
+    "sentenceLengthDelta": 3.1,
+    "firstPersonRatio": 0.06,
+    "bannedPhraseHits": [],
+    "passed": true,
+    "notes": []
+  },
+  "readiness": "ready",
+  "rejectionReasons": [],
+  "usageSummary": {
+    "profileFieldKeys": [
+      "full_name",
+      "motivation_statement",
+      "target_degree",
+      "target_focus_areas",
+      "target_intake",
+      "undergraduate_degree",
+      "undergraduate_gpa",
+      "undergraduate_institution"
+    ],
+    "verifiedStoryIds": [
+      "story_multi_agent_rl_pantry",
+      "story_nlp_lab_retrieval"
+    ],
+    "programIds": [
+      "program_mo44tk4r_1p_d2435d2c"
+    ],
+    "fundingIds": [
+      "funding_mo44tk4s_1t_4dd636f8"
+    ],
+    "personRoleIds": [
+      "personRole_mo44tk4t_23_b10160a0"
+    ],
+    "universityIds": [
+      "university_mo44tk4p_1j_e759581f"
+    ],
+    "professionalProfileIds": [
+      "profile_mo44tk4u_2c_b18f2f51"
+    ],
+    "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+  }
+}

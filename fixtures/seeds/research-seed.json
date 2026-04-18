@@ -1,0 +1,463 @@
+{
+  "$schema": "local-research-seed-v0",
+  "description": "Realistic local research-sweep fixture for MA-GA-Agent. Two CS/AI-focused universities (UGA, Georgia Tech) with department, program, funding, and contact candidates. Used by scripts/run-research-sweep.ts. NOTE: URLs, quoted snippets, contact names, and funding figures are illustrative-but-realistic examples for the local harness — they are NOT attested facts, and the harness ingests them only to exercise the evidence-first write path end-to-end.",
+  "reason": "onboarding_complete",
+  "filters": {
+    "targetCountries": ["US"],
+    "targetStates": ["GA"],
+    "researchThemes": [
+      "natural language processing",
+      "machine learning",
+      "multi-agent",
+      "reinforcement learning",
+      "computer vision"
+    ],
+    "requiredTierTags": ["R1"]
+  },
+  "universities": [
+    {
+      "university": {
+        "canonicalName": "University of Georgia",
+        "aliases": ["UGA"],
+        "country": "US",
+        "state": "GA",
+        "tierTag": "R1",
+        "primaryDomain": "uga.edu",
+        "ipedsId": "139959",
+        "researchFocus": [
+          "natural language processing",
+          "machine learning",
+          "multi-agent systems",
+          "computer vision"
+        ],
+        "evidence": [
+          {
+            "sourceUrl": "https://www.uga.edu/about/",
+            "sourceType": "user_attested",
+            "sourceLabel": "UGA about page",
+            "quotedText": "The University of Georgia is a public, R1 research university chartered in 1785. Its School of Computing offers graduate degrees and research programs spanning artificial intelligence, machine learning, and natural language processing.",
+            "sourceQualityScore": 0.9
+          }
+        ]
+      },
+      "programs": [
+        {
+          "title": "MS in Artificial Intelligence",
+          "aliases": ["MS AI"],
+          "department": {
+            "name": "School of Computing",
+            "website": "https://www.cs.uga.edu/",
+            "admissionsUrl": "https://www.cs.uga.edu/graduate-programs/",
+            "staffDirectoryUrl": "https://www.cs.uga.edu/directory/people",
+            "evidence": [
+              {
+                "sourceUrl": "https://www.cs.uga.edu/",
+                "sourceType": "department_page",
+                "sourceLabel": "UGA School of Computing home",
+                "quotedText": "The School of Computing at UGA hosts research across artificial intelligence, machine learning, natural language processing, systems, and theory. Graduate degrees include the MS in Computer Science and the MS in Artificial Intelligence.",
+                "sourceQualityScore": 0.85
+              }
+            ]
+          },
+          "degreeType": "MS",
+          "modality": "in_person",
+          "concentration": "Artificial Intelligence",
+          "curriculumUrl": "https://www.cs.uga.edu/graduate-programs/ms-ai",
+          "admissionsUrl": "https://grad.uga.edu/degrees/ms-ai/",
+          "thesisOption": "optional",
+          "curriculumExcerpt": "The MS in Artificial Intelligence requires graduate-level coursework in machine learning, deep learning, natural language processing, and computer vision. A thesis option is available for research-track students; a project option is available for application-track students.",
+          "facultyAlignmentExcerpt": "Faculty research spans machine learning, deep learning, natural language processing, representation learning, and reinforcement learning. Active labs include the NLP Lab and the Machine Learning and Data Systems Lab.",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.cs.uga.edu/graduate-programs/ms-ai",
+              "sourceType": "admissions_page",
+              "sourceLabel": "UGA MS AI program page",
+              "quotedText": "The MS in Artificial Intelligence at the University of Georgia requires core coursework in machine learning, deep learning, and natural language processing. Students may select a thesis track or a project track.",
+              "sourceQualityScore": 0.9
+            }
+          ]
+        },
+        {
+          "title": "MS in Computer Science",
+          "aliases": ["MSCS"],
+          "department": {
+            "name": "School of Computing",
+            "evidence": [
+              {
+                "sourceUrl": "https://www.cs.uga.edu/",
+                "sourceType": "department_page",
+                "sourceLabel": "UGA School of Computing home",
+                "quotedText": "Graduate degrees include the MS in Computer Science.",
+                "sourceQualityScore": 0.85
+              }
+            ]
+          },
+          "degreeType": "MSCS",
+          "modality": "in_person",
+          "concentration": null,
+          "curriculumUrl": "https://www.cs.uga.edu/graduate-programs/mscs",
+          "admissionsUrl": "https://grad.uga.edu/degrees/mscs/",
+          "thesisOption": "optional",
+          "curriculumExcerpt": "The MS in Computer Science covers algorithms, systems, software engineering, and electives in data science, machine learning, and computational methods.",
+          "facultyAlignmentExcerpt": "Faculty research includes algorithms, systems, data mining, optimization, and statistical learning.",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.cs.uga.edu/graduate-programs/mscs",
+              "sourceType": "admissions_page",
+              "sourceLabel": "UGA MS CS program page",
+              "quotedText": "The MS in Computer Science at the University of Georgia offers graduate coursework in algorithms, systems, and applied machine learning electives.",
+              "sourceQualityScore": 0.85
+            }
+          ]
+        }
+      ],
+      "funding": [
+        {
+          "title": "Graduate Research Assistantship - NLP Lab",
+          "description": "Graduate Research Assistantships (GRAs) in the NLP Lab include a full tuition waiver and a competitive stipend of $26,500 per academic year in exchange for 20 hours per week of research work. Students are admitted to MS or PhD programs and paired with a faculty advisor.",
+          "hostType": "lab",
+          "programId": "MS in Artificial Intelligence",
+          "departmentId": "School of Computing",
+          "applicationUrl": "https://www.cs.uga.edu/nlp-lab/join-us",
+          "deadlineDate": "2026-02-15",
+          "eligibility": { "degreeLevel": ["MS", "PhD"], "intl": true },
+          "intlEligible": true,
+          "evidence": [
+            {
+              "sourceUrl": "https://www.cs.uga.edu/nlp-lab/join-us",
+              "sourceType": "lab_page",
+              "sourceLabel": "UGA NLP Lab Join Us page",
+              "quotedText": "Graduate Research Assistantships in the NLP Lab include a full tuition waiver and a competitive stipend of $26,500 per academic year in exchange for 20 hours per week of research work.",
+              "sourceQualityScore": 0.9
+            }
+          ]
+        },
+        {
+          "title": "Graduate Teaching Assistantship - School of Computing",
+          "description": "Graduate Teaching Assistantships (GTAs) are available to admitted MS students on a competitive basis. Awards include full tuition remission and a stipend of $22,000 per academic year. GTAs are appointed at 0.50 FTE (20 hours per week) and support undergraduate coursework under faculty supervision.",
+          "hostType": "department",
+          "programId": "MS in Artificial Intelligence",
+          "departmentId": "School of Computing",
+          "applicationUrl": "https://www.cs.uga.edu/graduate-programs/funding",
+          "deadlineDate": "2026-01-15",
+          "eligibility": { "degreeLevel": ["MS"], "intl": true },
+          "intlEligible": true,
+          "evidence": [
+            {
+              "sourceUrl": "https://www.cs.uga.edu/graduate-programs/funding",
+              "sourceType": "department_page",
+              "sourceLabel": "UGA School of Computing funding page",
+              "quotedText": "Graduate Teaching Assistantships are available to admitted MS students on a competitive basis. Awards include full tuition remission and a stipend of $22,000 per academic year at 0.50 FTE.",
+              "sourceQualityScore": 0.9
+            }
+          ]
+        },
+        {
+          "title": "Partial Tuition Waiver - Graduate School Merit Award",
+          "description": "The Graduate School merit award may provide a partial tuition waiver for incoming MS students. Award amounts vary by cohort and do not include a stipend.",
+          "hostType": "grad_school",
+          "programId": null,
+          "departmentId": null,
+          "applicationUrl": "https://grad.uga.edu/funding/merit-award",
+          "deadlineDate": null,
+          "eligibility": {},
+          "intlEligible": null,
+          "evidence": [
+            {
+              "sourceUrl": "https://grad.uga.edu/funding/merit-award",
+              "sourceType": "aggregator",
+              "sourceLabel": "UGA Graduate School merit award page",
+              "quotedText": "The Graduate School merit award may provide a partial tuition waiver for incoming MS students; award amounts vary by cohort.",
+              "sourceQualityScore": 0.7
+            }
+          ]
+        }
+      ],
+      "contacts": [
+        {
+          "canonicalName": "J. Morales",
+          "nameAliases": ["Jordan Morales"],
+          "roleTag": "pi",
+          "roleTitle": "Associate Professor and NLP Lab PI",
+          "researchAreas": [
+            "natural language processing",
+            "representation learning",
+            "low-resource nlp"
+          ],
+          "preferredEmail": "morales@cs.uga.edu",
+          "emails": ["morales@cs.uga.edu"],
+          "departmentId": "School of Computing",
+          "programId": null,
+          "facultyPageUrl": "https://www.cs.uga.edu/directory/people/jordan-morales",
+          "scholarUrl": "https://scholar.google.com/citations?user=example-morales",
+          "institutionMatch": true,
+          "titleMatch": true,
+          "evidence": [
+            {
+              "sourceUrl": "https://www.cs.uga.edu/directory/people/jordan-morales",
+              "sourceType": "directory",
+              "sourceLabel": "UGA SoC directory — Jordan Morales",
+              "quotedText": "Jordan Morales, Associate Professor, School of Computing. Director of the NLP Lab. Research: natural language processing, representation learning, and low-resource NLP.",
+              "sourceQualityScore": 0.9
+            }
+          ]
+        },
+        {
+          "canonicalName": "Priya Sharma",
+          "roleTag": "dgs",
+          "roleTitle": "Director of Graduate Studies",
+          "researchAreas": ["computer vision", "machine learning"],
+          "preferredEmail": "dgs@cs.uga.edu",
+          "emails": ["dgs@cs.uga.edu", "psharma@cs.uga.edu"],
+          "departmentId": "School of Computing",
+          "programId": null,
+          "facultyPageUrl": "https://www.cs.uga.edu/directory/people/priya-sharma",
+          "institutionMatch": true,
+          "titleMatch": true,
+          "evidence": [
+            {
+              "sourceUrl": "https://www.cs.uga.edu/directory/people/priya-sharma",
+              "sourceType": "directory",
+              "sourceLabel": "UGA SoC directory — Priya Sharma (DGS)",
+              "quotedText": "Priya Sharma serves as Director of Graduate Studies in the School of Computing. Research areas include computer vision and machine learning.",
+              "sourceQualityScore": 0.9
+            }
+          ]
+        },
+        {
+          "canonicalName": "Dana Kowalski",
+          "roleTag": "coordinator",
+          "roleTitle": "Graduate Program Coordinator",
+          "researchAreas": [],
+          "preferredEmail": "grad-coord@cs.uga.edu",
+          "emails": ["grad-coord@cs.uga.edu"],
+          "departmentId": "School of Computing",
+          "programId": null,
+          "institutionMatch": true,
+          "titleMatch": false,
+          "evidence": [
+            {
+              "sourceUrl": "https://www.cs.uga.edu/graduate-programs/contact",
+              "sourceType": "directory",
+              "sourceLabel": "UGA SoC grad programs contact page",
+              "quotedText": "Dana Kowalski, Graduate Program Coordinator. Contact for admissions logistics, funding applications, and program timelines.",
+              "sourceQualityScore": 0.75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "university": {
+        "canonicalName": "Georgia Institute of Technology",
+        "aliases": ["Georgia Tech", "GaTech"],
+        "country": "US",
+        "state": "GA",
+        "tierTag": "R1",
+        "primaryDomain": "gatech.edu",
+        "ipedsId": "139755",
+        "researchFocus": [
+          "machine learning",
+          "reinforcement learning",
+          "multi-agent",
+          "computer vision",
+          "robotics"
+        ],
+        "evidence": [
+          {
+            "sourceUrl": "https://www.gatech.edu/about",
+            "sourceType": "user_attested",
+            "sourceLabel": "Georgia Tech about page",
+            "quotedText": "The Georgia Institute of Technology is a public, R1 research university based in Atlanta, Georgia. Its College of Computing and School of Interactive Computing host graduate programs and research groups spanning machine learning, computer vision, reinforcement learning, and multi-agent systems.",
+            "sourceQualityScore": 0.9
+          }
+        ]
+      },
+      "programs": [
+        {
+          "title": "MS in Computer Science - Machine Learning Specialization",
+          "aliases": ["MSCS-ML", "MS CS ML"],
+          "department": {
+            "name": "School of Computer Science",
+            "website": "https://www.cc.gatech.edu/",
+            "admissionsUrl": "https://www.cc.gatech.edu/academics/degree-programs/graduate/computer-science",
+            "staffDirectoryUrl": "https://www.cc.gatech.edu/directory",
+            "evidence": [
+              {
+                "sourceUrl": "https://www.cc.gatech.edu/",
+                "sourceType": "department_page",
+                "sourceLabel": "Georgia Tech College of Computing home",
+                "quotedText": "The College of Computing at Georgia Tech hosts the School of Computer Science, the School of Computational Science and Engineering, and the School of Interactive Computing. Graduate specializations include machine learning, computer vision, reinforcement learning, and multi-agent systems.",
+                "sourceQualityScore": 0.85
+              }
+            ]
+          },
+          "degreeType": "MSCS",
+          "modality": "in_person",
+          "concentration": "Machine Learning",
+          "curriculumUrl": "https://www.cc.gatech.edu/academics/degree-programs/graduate/computer-science/ms-specializations",
+          "admissionsUrl": "https://grad.gatech.edu/degree/ms-cs",
+          "thesisOption": "optional",
+          "curriculumExcerpt": "The Machine Learning specialization includes graduate coursework in machine learning, deep learning, reinforcement learning, computer vision, and natural language processing. Students may pursue a thesis project advised by faculty in the College of Computing.",
+          "facultyAlignmentExcerpt": "Faculty in the Machine Learning Center have expertise in deep learning, reinforcement learning, multi-agent systems, representation learning, and generative AI.",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.cc.gatech.edu/academics/degree-programs/graduate/computer-science/ms-specializations",
+              "sourceType": "admissions_page",
+              "sourceLabel": "Georgia Tech MS CS specializations",
+              "quotedText": "The MS in Computer Science offers specializations including Machine Learning, which covers machine learning, deep learning, reinforcement learning, computer vision, and natural language processing.",
+              "sourceQualityScore": 0.9
+            }
+          ]
+        },
+        {
+          "title": "MS in Computational Science and Engineering",
+          "aliases": ["MS CSE"],
+          "department": {
+            "name": "School of Computational Science and Engineering",
+            "evidence": [
+              {
+                "sourceUrl": "https://cse.gatech.edu/",
+                "sourceType": "department_page",
+                "sourceLabel": "Georgia Tech CSE home",
+                "quotedText": "The School of Computational Science and Engineering offers the MS in CSE, emphasizing data science, optimization, and statistical learning for computational problems.",
+                "sourceQualityScore": 0.85
+              }
+            ]
+          },
+          "degreeType": "MS",
+          "modality": "in_person",
+          "concentration": "Data Science",
+          "curriculumUrl": "https://cse.gatech.edu/academics/masters",
+          "admissionsUrl": "https://grad.gatech.edu/degree/ms-cse",
+          "thesisOption": "optional",
+          "curriculumExcerpt": "The MS in CSE covers data mining, optimization, statistical learning, and computational methods for science and engineering.",
+          "facultyAlignmentExcerpt": "Faculty research spans data science, optimization, graph learning, and Bayesian methods.",
+          "evidence": [
+            {
+              "sourceUrl": "https://cse.gatech.edu/academics/masters",
+              "sourceType": "admissions_page",
+              "sourceLabel": "Georgia Tech MS CSE page",
+              "quotedText": "The MS in CSE emphasizes data mining, optimization, statistical learning, and Bayesian computational methods for applied research.",
+              "sourceQualityScore": 0.85
+            }
+          ]
+        }
+      ],
+      "funding": [
+        {
+          "title": "Graduate Research Assistantship - Machine Learning Center",
+          "description": "Graduate Research Assistantships in the Machine Learning Center offer a full tuition waiver plus a stipend of $30,000 per academic year at 0.50 FTE. Appointments are contingent on advisor confirmation.",
+          "hostType": "lab",
+          "programId": "MS in Computer Science - Machine Learning Specialization",
+          "departmentId": "School of Computer Science",
+          "applicationUrl": "https://ml.gatech.edu/join",
+          "deadlineDate": "2026-01-15",
+          "eligibility": { "degreeLevel": ["MS", "PhD"], "intl": true },
+          "intlEligible": true,
+          "evidence": [
+            {
+              "sourceUrl": "https://ml.gatech.edu/join",
+              "sourceType": "lab_page",
+              "sourceLabel": "Georgia Tech ML Center - Join page",
+              "quotedText": "Graduate Research Assistantships offer a full tuition waiver plus a stipend of $30,000 per academic year at 0.50 FTE, contingent on advisor confirmation.",
+              "sourceQualityScore": 0.9
+            }
+          ]
+        },
+        {
+          "title": "Teaching Assistantship - School of Computer Science",
+          "description": "Teaching Assistantships may include tuition remission for qualifying students. Allocation is decided on a per-semester basis; international students are eligible on the same terms as domestic students.",
+          "hostType": "department",
+          "programId": "MS in Computer Science - Machine Learning Specialization",
+          "departmentId": "School of Computer Science",
+          "applicationUrl": "https://www.cc.gatech.edu/graduate/assistantships",
+          "deadlineDate": null,
+          "eligibility": { "intl": true },
+          "intlEligible": true,
+          "evidence": [
+            {
+              "sourceUrl": "https://www.cc.gatech.edu/graduate/assistantships",
+              "sourceType": "department_page",
+              "sourceLabel": "Georgia Tech CoC assistantships",
+              "quotedText": "Teaching Assistantships may include tuition remission for qualifying students; allocations are decided on a per-semester basis.",
+              "sourceQualityScore": 0.75
+            }
+          ]
+        },
+        {
+          "title": "President's Fellowship",
+          "description": "The President's Fellowship is awarded to select incoming graduate students by the Graduate School. The award is merit-based and amounts vary by cohort.",
+          "hostType": "grad_school",
+          "programId": null,
+          "departmentId": null,
+          "applicationUrl": "https://grad.gatech.edu/funding/presidents-fellowship",
+          "deadlineDate": null,
+          "eligibility": {},
+          "intlEligible": null,
+          "evidence": [
+            {
+              "sourceUrl": "https://grad.gatech.edu/funding/presidents-fellowship",
+              "sourceType": "aggregator",
+              "sourceLabel": "Georgia Tech President's Fellowship page",
+              "quotedText": "The President's Fellowship is awarded on a merit basis to incoming graduate students; award amounts vary.",
+              "sourceQualityScore": 0.7
+            }
+          ]
+        }
+      ],
+      "contacts": [
+        {
+          "canonicalName": "Marcus Chen",
+          "roleTag": "pi",
+          "roleTitle": "Associate Professor, Machine Learning Center",
+          "researchAreas": [
+            "reinforcement learning",
+            "multi-agent",
+            "deep learning"
+          ],
+          "preferredEmail": "mchen@cc.gatech.edu",
+          "emails": ["mchen@cc.gatech.edu"],
+          "departmentId": "School of Computer Science",
+          "programId": null,
+          "facultyPageUrl": "https://www.cc.gatech.edu/directory/marcus-chen",
+          "scholarUrl": "https://scholar.google.com/citations?user=example-chen",
+          "personalUrl": "https://mchen.gatech.edu/",
+          "institutionMatch": true,
+          "titleMatch": true,
+          "evidence": [
+            {
+              "sourceUrl": "https://www.cc.gatech.edu/directory/marcus-chen",
+              "sourceType": "directory",
+              "sourceLabel": "Georgia Tech CoC directory — Marcus Chen",
+              "quotedText": "Marcus Chen, Associate Professor, Machine Learning Center. Research: reinforcement learning, multi-agent systems, deep learning.",
+              "sourceQualityScore": 0.9
+            }
+          ]
+        },
+        {
+          "canonicalName": "Elena Park",
+          "roleTag": "dgs",
+          "roleTitle": "Director of Graduate Programs, School of Computer Science",
+          "researchAreas": ["machine learning", "natural language processing"],
+          "preferredEmail": "graduate@cc.gatech.edu",
+          "emails": ["graduate@cc.gatech.edu"],
+          "departmentId": "School of Computer Science",
+          "programId": null,
+          "facultyPageUrl": "https://www.cc.gatech.edu/directory/elena-park",
+          "institutionMatch": true,
+          "titleMatch": true,
+          "evidence": [
+            {
+              "sourceUrl": "https://www.cc.gatech.edu/directory/elena-park",
+              "sourceType": "directory",
+              "sourceLabel": "Georgia Tech CoC directory — Elena Park (DGS)",
+              "quotedText": "Elena Park serves as Director of Graduate Programs in the School of Computer Science. Research: machine learning and natural language processing.",
+              "sourceQualityScore": 0.9
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

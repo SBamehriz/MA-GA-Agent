@@ -1,0 +1,389 @@
+{
+  "request": {
+    "id": "req_personal_statement_primary",
+    "documentType": "personal_statement",
+    "universityId": "university_mo44tk4p_1j_e759581f",
+    "programId": "program_mo44tk4r_1p_d2435d2c"
+  },
+  "draft": {
+    "requestId": "req_personal_statement_primary",
+    "documentType": "personal_statement",
+    "targetProgramId": "program_mo44tk4r_1p_d2435d2c",
+    "targetUniversityId": "university_mo44tk4p_1j_e759581f",
+    "targetFundingId": null,
+    "targetPersonRoleId": null,
+    "title": "Personal statement — MS in Artificial Intelligence @ University of Georgia",
+    "sections": [
+      {
+        "id": "body",
+        "title": "Personal statement",
+        "paragraphs": [
+          {
+            "id": "para_3",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_1",
+                "kind": "voice_stylistic",
+                "text": "I write about my own work the way I think about it: one argument per paragraph, nothing said that cannot be shown.",
+                "refs": [
+                  {
+                    "type": "voice_anchor",
+                    "id": "voice_anchor_alex_rivera_2026"
+                  }
+                ],
+                "slotTag": "ps_opening_voice"
+              },
+              {
+                "id": "claim_2",
+                "kind": "factual_profile",
+                "text": "My name is Alex Rivera, and my path to the MS in Artificial Intelligence started with small, concrete projects that forced me to be specific about what I actually changed.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4l_k_2390adcf"
+                  }
+                ],
+                "slotTag": "ps_opening_identity"
+              }
+            ]
+          },
+          {
+            "id": "para_8",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_4",
+                "kind": "factual_profile",
+                "text": "I trained at University of Georgia, and the projects that stuck with me were the ones where I had to defend the choices I made.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_s_35c729b4"
+                  }
+                ],
+                "slotTag": "ps_background"
+              },
+              {
+                "id": "claim_5",
+                "kind": "narrative",
+                "text": "As an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation...",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "ps_story"
+              },
+              {
+                "id": "claim_6",
+                "kind": "narrative",
+                "text": "Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "ps_story_proof"
+              },
+              {
+                "id": "claim_7",
+                "kind": "factual_profile",
+                "text": "I want two focused years to go from being an enthusiastic undergraduate researcher to someone who can own a non-trivial research project end to end.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_1c_3dee31cc"
+                  }
+                ],
+                "slotTag": "ps_motivation"
+              }
+            ]
+          },
+          {
+            "id": "para_c",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_9",
+                "kind": "factual_profile",
+                "text": "The next two years are about focused work on natural language processing, multi-agent reinforcement learning, on-device inference.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_18_2621ae40"
+                  }
+                ],
+                "slotTag": "ps_focus"
+              },
+              {
+                "id": "claim_a",
+                "kind": "factual_program",
+                "text": "The MS in Artificial Intelligence is where that kind of scoped, checkable work lives.",
+                "refs": [
+                  {
+                    "type": "program",
+                    "id": "program_mo44tk4r_1p_d2435d2c"
+                  }
+                ],
+                "slotTag": "ps_program_return"
+              },
+              {
+                "id": "claim_b",
+                "kind": "factual_university",
+                "text": "That is why I am applying to University of Georgia.",
+                "refs": [
+                  {
+                    "type": "university",
+                    "id": "university_mo44tk4p_1j_e759581f"
+                  }
+                ],
+                "slotTag": "ps_university_return"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "text": "## Personal statement\n\nI write about my own work the way I think about it: one argument per paragraph, nothing said that cannot be shown. My name is Alex Rivera, and my path to the MS in Artificial Intelligence started with small, concrete projects that forced me to be specific about what I actually changed.\n\nI trained at University of Georgia, and the projects that stuck with me were the ones where I had to defend the choices I made. As an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation... Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab. I want two focused years to go from being an enthusiastic undergraduate researcher to someone who can own a non-trivial research project end to end.\n\nThe next two years are about focused work on natural language processing, multi-agent reinforcement learning, on-device inference. The MS in Artificial Intelligence is where that kind of scoped, checkable work lives. That is why I am applying to University of Georgia.",
+    "claimCount": 9,
+    "verifiableClaimCount": 8,
+    "wordCount": 202,
+    "generatedAt": "2026-04-18T09:25:48.468Z"
+  },
+  "critic": {
+    "notes": [],
+    "hasBlockers": false
+  },
+  "grounding": {
+    "supportedClaims": 8,
+    "unsupportedClaims": [],
+    "verifiableClaims": 8,
+    "stylisticClaims": 1,
+    "refsByType": {
+      "voice_anchor": 1,
+      "profile_field": 4,
+      "story": 2,
+      "program": 1,
+      "university": 1
+    },
+    "entries": [
+      {
+        "claimId": "claim_1",
+        "slotTag": "ps_opening_voice",
+        "kind": "voice_stylistic",
+        "refs": [
+          {
+            "type": "voice_anchor",
+            "id": "voice_anchor_alex_rivera_2026"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "voice_anchor",
+            "id": "voice_anchor_alex_rivera_2026",
+            "resolved": true,
+            "note": "ready voice anchor"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_2",
+        "slotTag": "ps_opening_identity",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4l_k_2390adcf"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4l_k_2390adcf",
+            "resolved": true,
+            "note": "attested profile_field.full_name"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_4",
+        "slotTag": "ps_background",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_s_35c729b4"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_s_35c729b4",
+            "resolved": true,
+            "note": "attested profile_field.undergraduate_institution"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_5",
+        "slotTag": "ps_story",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_6",
+        "slotTag": "ps_story_proof",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_7",
+        "slotTag": "ps_motivation",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_1c_3dee31cc"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_1c_3dee31cc",
+            "resolved": true,
+            "note": "attested profile_field.motivation_statement"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_9",
+        "slotTag": "ps_focus",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_18_2621ae40"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_18_2621ae40",
+            "resolved": true,
+            "note": "attested profile_field.target_focus_areas"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_a",
+        "slotTag": "ps_program_return",
+        "kind": "factual_program",
+        "refs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c",
+            "resolved": true,
+            "note": "graduate_program evidence admissions_page:UGA MS AI program page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_b",
+        "slotTag": "ps_university_return",
+        "kind": "factual_university",
+        "refs": [
+          {
+            "type": "university",
+            "id": "university_mo44tk4p_1j_e759581f"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "university",
+            "id": "university_mo44tk4p_1j_e759581f",
+            "resolved": true,
+            "note": "university evidence user_attested:UGA about page"
+          }
+        ],
+        "supported": true
+      }
+    ],
+    "passed": true
+  },
+  "style": {
+    "voiceAnchorId": "voice_anchor_alex_rivera_2026",
+    "meanSentenceLength": 18.36,
+    "voiceAnchorMeanSentenceLength": 18.1,
+    "sentenceLengthDelta": 0.26,
+    "firstPersonRatio": 0.0792,
+    "bannedPhraseHits": [],
+    "passed": true,
+    "notes": []
+  },
+  "readiness": "ready",
+  "rejectionReasons": [],
+  "usageSummary": {
+    "profileFieldKeys": [
+      "full_name",
+      "motivation_statement",
+      "target_focus_areas",
+      "undergraduate_institution"
+    ],
+    "verifiedStoryIds": [
+      "story_nlp_lab_retrieval"
+    ],
+    "programIds": [
+      "program_mo44tk4r_1p_d2435d2c"
+    ],
+    "fundingIds": [],
+    "personRoleIds": [],
+    "universityIds": [
+      "university_mo44tk4p_1j_e759581f"
+    ],
+    "professionalProfileIds": [],
+    "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+  }
+}

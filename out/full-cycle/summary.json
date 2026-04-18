@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-04-18T09:25:49.240Z",
+  "applicationsProcessed": 2,
+  "readyForSubmission": 0,
+  "pendingApprovals": 9,
+  "blockedApplications": 2,
+  "awaitingUser": 2,
+  "resume": {
+    "linked": true,
+    "originalPath": "C:\\Users\\ASUS\\Documents\\Work\\APPS\\MA-GA-Agent\\fixtures\\seeds\\materials\\alex-rivera-resume-2026.pdf",
+    "originalExists": false,
+    "tailoredPrograms": 2
+  },
+  "documents": {
+    "sops": 2,
+    "personalStatements": 2,
+    "shortAnswers": 0,
+    "coverLetters": 2,
+    "resumeTailorings": 2,
+    "outreachMessages": 0
+  },
+  "stepsRun": [
+    "onboarding",
+    "research sweep",
+    "writing",
+    "application prep",
+    "approval cycle"
+  ],
+  "stepsSkipped": [],
+  "auditSource": "persisted-snapshot",
+  "sidecarDir": "C:\\Users\\ASUS\\Documents\\Work\\APPS\\MA-GA-Agent\\out\\full-cycle"
+}

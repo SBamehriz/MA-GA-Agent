@@ -1,0 +1,7 @@
+## Personal statement
+
+I write about my own work the way I think about it: one argument per paragraph, nothing said that cannot be shown. My name is Alex Rivera, and my path to the MS in Computer Science - Machine Learning Specialization started with small, concrete projects that forced me to be specific about what I actually changed.
+
+I trained at University of Georgia, and the projects that stuck with me were the ones where I had to defend the choices I made. As an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation... Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab. I want two focused years to go from being an enthusiastic undergraduate researcher to someone who can own a non-trivial research project end to end.
+
+The next two years are about focused work on natural language processing, multi-agent reinforcement learning, on-device inference. The MS in Computer Science - Machine Learning Specialization is where that kind of scoped, checkable work lives. That is why I am applying to Georgia Institute of Technology.

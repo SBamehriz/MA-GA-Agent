@@ -1,0 +1,631 @@
+{
+  "request": {
+    "id": "req_resume_tailoring_primary",
+    "documentType": "resume_tailoring",
+    "universityId": "university_mo44tk4p_1j_e759581f",
+    "programId": "program_mo44tk4r_1p_d2435d2c",
+    "personRoleId": "personRole_mo44tk4t_23_b10160a0"
+  },
+  "draft": {
+    "requestId": "req_resume_tailoring_primary",
+    "documentType": "resume_tailoring",
+    "targetProgramId": "program_mo44tk4r_1p_d2435d2c",
+    "targetUniversityId": "university_mo44tk4p_1j_e759581f",
+    "targetFundingId": null,
+    "targetPersonRoleId": "personRole_mo44tk4t_23_b10160a0",
+    "title": "Resume tailoring — MS in Artificial Intelligence @ University of Georgia",
+    "sections": [
+      {
+        "id": "header",
+        "title": "Header",
+        "paragraphs": [
+          {
+            "id": "para_3",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_1",
+                "kind": "factual_profile",
+                "text": "# Alex Rivera",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4l_k_2390adcf"
+                  }
+                ],
+                "slotTag": "resume_header_name"
+              },
+              {
+                "id": "claim_2",
+                "kind": "factual_profile",
+                "text": "alex.rivera@example.com",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_m_90d2a7b1"
+                  }
+                ],
+                "slotTag": "resume_header_contact"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "education",
+        "title": "Education",
+        "paragraphs": [
+          {
+            "id": "para_5",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_4",
+                "kind": "factual_profile",
+                "text": "Bachelor of Science in Computer Science, University of Georgia (2025) — GPA 3.82 / 4.00.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_s_35c729b4"
+                  },
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_v_34c46105"
+                  },
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_11_209322aa"
+                  },
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_y_bbdc8d56"
+                  }
+                ],
+                "slotTag": "resume_education_entry"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tailoring",
+        "title": "Tailoring summary",
+        "paragraphs": [
+          {
+            "id": "para_9",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_6",
+                "kind": "factual_program",
+                "text": "Tailored for the MS in Artificial Intelligence at University of Georgia.",
+                "refs": [
+                  {
+                    "type": "program",
+                    "id": "program_mo44tk4r_1p_d2435d2c"
+                  }
+                ],
+                "slotTag": "resume_tailoring_target"
+              },
+              {
+                "id": "claim_7",
+                "kind": "factual_profile",
+                "text": "Emphasis: natural language processing, multi-agent reinforcement learning, on-device inference.",
+                "refs": [
+                  {
+                    "type": "profile_field",
+                    "id": "field_mo44tk4m_18_2621ae40"
+                  }
+                ],
+                "slotTag": "resume_tailoring_focus"
+              },
+              {
+                "id": "claim_8",
+                "kind": "factual_contact",
+                "text": "Secondary emphasis: alignment with Director of Graduate Studies (computer vision, machine learning).",
+                "refs": [
+                  {
+                    "type": "person_role",
+                    "id": "personRole_mo44tk4t_23_b10160a0"
+                  }
+                ],
+                "slotTag": "resume_tailoring_role"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "experience",
+        "title": "Selected experience & projects",
+        "paragraphs": [
+          {
+            "id": "para_e",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_a",
+                "kind": "narrative",
+                "text": "- **Retrieval-augmented code search in the UGA NLP Lab.** As an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation...",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "resume_experience_1_header"
+              },
+              {
+                "id": "claim_b",
+                "kind": "narrative",
+                "text": "- Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "resume_experience_1_bullet_1"
+              },
+              {
+                "id": "claim_c",
+                "kind": "narrative",
+                "text": "- Designed an ablation over span granularity and built the evaluation harness.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "resume_experience_1_bullet_2"
+              },
+              {
+                "id": "claim_d",
+                "kind": "narrative",
+                "text": "- Authored a span-level error analysis that became part of a workshop paper contribution.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_nlp_lab_retrieval"
+                  }
+                ],
+                "slotTag": "resume_experience_1_bullet_3"
+              }
+            ]
+          },
+          {
+            "id": "para_j",
+            "heading": null,
+            "claims": [
+              {
+                "id": "claim_f",
+                "kind": "narrative",
+                "text": "- **Multi-agent RL for pantry restocking.** I built a multi-agent reinforcement learning environment that modeled a shared household pantry as a coordination game between independent restocking agents. The interesting part was not the reward function; it was the failure mode. Two agents with almost identical policies...",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_multi_agent_rl_pantry"
+                  }
+                ],
+                "slotTag": "resume_experience_2_header"
+              },
+              {
+                "id": "claim_g",
+                "kind": "narrative",
+                "text": "- Implemented a multi-agent RL environment in PettingZoo and PyTorch around a pantry-restocking coordination game.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_multi_agent_rl_pantry"
+                  }
+                ],
+                "slotTag": "resume_experience_2_bullet_1"
+              },
+              {
+                "id": "claim_h",
+                "kind": "narrative",
+                "text": "- Diagnosed a free-rider failure mode and ran an ablation comparing no-communication baselines against a cheap communication channel.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_multi_agent_rl_pantry"
+                  }
+                ],
+                "slotTag": "resume_experience_2_bullet_2"
+              },
+              {
+                "id": "claim_i",
+                "kind": "narrative",
+                "text": "- Reported that coordination collapsed without communication and throughput improved modestly with it.",
+                "refs": [
+                  {
+                    "type": "story",
+                    "id": "story_multi_agent_rl_pantry"
+                  }
+                ],
+                "slotTag": "resume_experience_2_bullet_3"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "text": "## Header\n\n# Alex Rivera alex.rivera@example.com\n\n## Education\n\nBachelor of Science in Computer Science, University of Georgia (2025) — GPA 3.82 / 4.00.\n\n## Tailoring summary\n\nTailored for the MS in Artificial Intelligence at University of Georgia. Emphasis: natural language processing, multi-agent reinforcement learning, on-device inference. Secondary emphasis: alignment with Director of Graduate Studies (computer vision, machine learning).\n\n## Selected experience & projects\n\n- **Retrieval-augmented code search in the UGA NLP Lab.** As an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation... - Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab. - Designed an ablation over span granularity and built the evaluation harness. - Authored a span-level error analysis that became part of a workshop paper contribution.\n\n- **Multi-agent RL for pantry restocking.** I built a multi-agent reinforcement learning environment that modeled a shared household pantry as a coordination game between independent restocking agents. The interesting part was not the reward function; it was the failure mode. Two agents with almost identical policies... - Implemented a multi-agent RL environment in PettingZoo and PyTorch around a pantry-restocking coordination game. - Diagnosed a free-rider failure mode and ran an ablation comparing no-communication baselines against a cheap communication channel. - Reported that coordination collapsed without communication and throughput improved modestly with it.",
+    "claimCount": 14,
+    "verifiableClaimCount": 14,
+    "wordCount": 247,
+    "generatedAt": "2026-04-18T09:25:48.468Z"
+  },
+  "critic": {
+    "notes": [],
+    "hasBlockers": false
+  },
+  "grounding": {
+    "supportedClaims": 14,
+    "unsupportedClaims": [],
+    "verifiableClaims": 14,
+    "stylisticClaims": 0,
+    "refsByType": {
+      "profile_field": 7,
+      "program": 1,
+      "person_role": 1,
+      "story": 8
+    },
+    "entries": [
+      {
+        "claimId": "claim_1",
+        "slotTag": "resume_header_name",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4l_k_2390adcf"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4l_k_2390adcf",
+            "resolved": true,
+            "note": "attested profile_field.full_name"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_2",
+        "slotTag": "resume_header_contact",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_m_90d2a7b1"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_m_90d2a7b1",
+            "resolved": true,
+            "note": "attested profile_field.primary_email"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_4",
+        "slotTag": "resume_education_entry",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_s_35c729b4"
+          },
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_v_34c46105"
+          },
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_11_209322aa"
+          },
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_y_bbdc8d56"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_s_35c729b4",
+            "resolved": true,
+            "note": "attested profile_field.undergraduate_institution"
+          },
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_v_34c46105",
+            "resolved": true,
+            "note": "attested profile_field.undergraduate_degree"
+          },
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_11_209322aa",
+            "resolved": true,
+            "note": "attested profile_field.graduation_year"
+          },
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_y_bbdc8d56",
+            "resolved": true,
+            "note": "attested profile_field.undergraduate_gpa"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_6",
+        "slotTag": "resume_tailoring_target",
+        "kind": "factual_program",
+        "refs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "program",
+            "id": "program_mo44tk4r_1p_d2435d2c",
+            "resolved": true,
+            "note": "graduate_program evidence admissions_page:UGA MS AI program page"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_7",
+        "slotTag": "resume_tailoring_focus",
+        "kind": "factual_profile",
+        "refs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_18_2621ae40"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "profile_field",
+            "id": "field_mo44tk4m_18_2621ae40",
+            "resolved": true,
+            "note": "attested profile_field.target_focus_areas"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_8",
+        "slotTag": "resume_tailoring_role",
+        "kind": "factual_contact",
+        "refs": [
+          {
+            "type": "person_role",
+            "id": "personRole_mo44tk4t_23_b10160a0"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "person_role",
+            "id": "personRole_mo44tk4t_23_b10160a0",
+            "resolved": true,
+            "note": "person_role evidence directory:UGA SoC directory — Priya Sharma (DGS)"
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_a",
+        "slotTag": "resume_experience_1_header",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_b",
+        "slotTag": "resume_experience_1_bullet_1",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_c",
+        "slotTag": "resume_experience_1_bullet_2",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_d",
+        "slotTag": "resume_experience_1_bullet_3",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_nlp_lab_retrieval",
+            "resolved": true,
+            "note": "verified story \"Retrieval-augmented code search in the UGA NLP Lab\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_f",
+        "slotTag": "resume_experience_2_header",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry",
+            "resolved": true,
+            "note": "verified story \"Multi-agent RL for pantry restocking\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_g",
+        "slotTag": "resume_experience_2_bullet_1",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry",
+            "resolved": true,
+            "note": "verified story \"Multi-agent RL for pantry restocking\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_h",
+        "slotTag": "resume_experience_2_bullet_2",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry",
+            "resolved": true,
+            "note": "verified story \"Multi-agent RL for pantry restocking\""
+          }
+        ],
+        "supported": true
+      },
+      {
+        "claimId": "claim_i",
+        "slotTag": "resume_experience_2_bullet_3",
+        "kind": "narrative",
+        "refs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry"
+          }
+        ],
+        "resolvedRefs": [
+          {
+            "type": "story",
+            "id": "story_multi_agent_rl_pantry",
+            "resolved": true,
+            "note": "verified story \"Multi-agent RL for pantry restocking\""
+          }
+        ],
+        "supported": true
+      }
+    ],
+    "passed": true
+  },
+  "style": {
+    "voiceAnchorId": "voice_anchor_alex_rivera_2026",
+    "meanSentenceLength": 9.73,
+    "voiceAnchorMeanSentenceLength": 18.1,
+    "sentenceLengthDelta": 8.37,
+    "firstPersonRatio": 0.0202,
+    "bannedPhraseHits": [],
+    "passed": false,
+    "notes": [
+      "mean sentence length 9.7 words is 8.4 words off voice anchor (18.1); allowed ±6.",
+      "first-person ratio 0.020 below required 0.052 (voice anchor ratio 0.105)."
+    ]
+  },
+  "readiness": "style_failed",
+  "rejectionReasons": [
+    "[style] mean sentence length 9.7 words is 8.4 words off voice anchor (18.1); allowed ±6.",
+    "[style] first-person ratio 0.020 below required 0.052 (voice anchor ratio 0.105)."
+  ],
+  "usageSummary": {
+    "profileFieldKeys": [
+      "full_name",
+      "graduation_year",
+      "primary_email",
+      "target_focus_areas",
+      "undergraduate_degree",
+      "undergraduate_gpa",
+      "undergraduate_institution"
+    ],
+    "verifiedStoryIds": [
+      "story_multi_agent_rl_pantry",
+      "story_nlp_lab_retrieval"
+    ],
+    "programIds": [
+      "program_mo44tk4r_1p_d2435d2c"
+    ],
+    "fundingIds": [],
+    "personRoleIds": [
+      "personRole_mo44tk4t_23_b10160a0"
+    ],
+    "universityIds": [],
+    "professionalProfileIds": [],
+    "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+  }
+}

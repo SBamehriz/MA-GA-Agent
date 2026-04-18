@@ -1,0 +1,7 @@
+Dear Elena Park,
+
+I am writing in plain sentences because I want the ask to be easy to check. I am applying to the Graduate Research Assistantship - Machine Learning Center at Georgia Institute of Technology. I am Alex Rivera, a candidate for the MS in Computer Science - Machine Learning Specialization starting Fall 2026. The MS in Computer Science - Machine Learning Specialization concentration is Machine Learning, which is what made this funding route the right one to pursue.
+
+I am specifically interested in working with the Director of Graduate Programs, School of Computer Science on machine learning, natural language processing. As an undergraduate researcher in the UGA NLP Lab I led a retrieval-augmented code search project that asked a narrow question: does span-level supervision meaningfully improve retrieval on low-resource code repositories? I built the evaluation harness, designed an ablation... Led retrieval-augmented code search project end to end as an undergraduate researcher at the UGA NLP Lab. I have read the group's public work and it is directly connected to the problem I just described.
+
+I would like to be considered for this assistantship in tandem with my MS in Computer Science - Machine Learning Specialization application. I can commit to the funding's time expectation as described on the posting. I can be reached at alex.rivera@example.com. Thank you for considering this application for MS in Computer Science / Artificial Intelligence track.

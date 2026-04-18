@@ -53,3 +53,13 @@ export function createWritingGroundingContext(
     missing_requirements: missingRequirements
   };
 }
+
+export * from "./types";
+export * from "./claims";
+export { loadWritingProfileContext, WritingResourceError } from "./resources";
+export { loadWritingTargetContext } from "./target";
+export { runGroundingCheck } from "./grounding";
+export { runStyleCheck } from "./style";
+export { runCritic } from "./critic";
+export { buildDraftArtifact } from "./drafter";
+export { runWritingAgent, type WritingAgentRunInput } from "./agent";

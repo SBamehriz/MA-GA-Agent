@@ -1,0 +1,77 @@
+[
+  {
+    "name": "approval.decided",
+    "payload": {
+      "approvalRequestId": "approval_mo44tkoh_3b_12e65753",
+      "applicationId": "application_mo44tkog_36_2df842af",
+      "userId": "user_alex_rivera_local",
+      "actionType": "approve_draft",
+      "decision": "approve",
+      "newStatus": "approved",
+      "decidedAt": "2026-04-18T09:25:49.170Z",
+      "artifactId": "appArtifact_mo44tkog_37_27de4121",
+      "checklistItemIds": [
+        "checklist_program_mo44tko6_1p_8db8a071__sop"
+      ],
+      "decisionNote": "Reviewed draft locally; grounding and style checks look correct for this cycle."
+    }
+  },
+  {
+    "name": "approval.decided",
+    "payload": {
+      "approvalRequestId": "approval_mo44tkoh_3c_86ad4fe3",
+      "applicationId": "application_mo44tkog_36_2df842af",
+      "userId": "user_alex_rivera_local",
+      "actionType": "edit_required",
+      "decision": "request_edit",
+      "newStatus": "edited",
+      "decidedAt": "2026-04-18T09:25:49.171Z",
+      "artifactId": "appArtifact_mo44tkog_38_59c48fd5",
+      "checklistItemIds": [
+        "checklist_program_mo44tko6_1p_8db8a071__resume"
+      ],
+      "decisionNote": "Sentence-length and first-person ratio drift — need a voice-anchor-aligned revision."
+    }
+  },
+  {
+    "name": "approval.decided",
+    "payload": {
+      "approvalRequestId": "approval_mo44tkoh_3f_6f5c1f8d",
+      "applicationId": "application_mo44tkog_36_2df842af",
+      "userId": "user_alex_rivera_local",
+      "actionType": "missing_input",
+      "decision": "approve",
+      "newStatus": "approved",
+      "decidedAt": "2026-04-18T09:25:49.171Z",
+      "artifactId": null,
+      "checklistItemIds": [
+        "checklist_program_mo44tko6_1p_8db8a071__test_score_report"
+      ],
+      "decisionNote": "User attests missing input will be supplied manually before portal submission (data-capture flow is a later block)."
+    }
+  },
+  {
+    "name": "application.resumed",
+    "payload": {
+      "applicationId": "application_mo44tkog_36_2df842af",
+      "userId": "user_alex_rivera_local",
+      "programId": "program_mo44tko6_1p_8db8a071",
+      "resumedAt": "2026-04-18T09:25:49.171Z",
+      "pendingApprovals": 3,
+      "resolvedApprovals": 3,
+      "status": "awaiting_user"
+    }
+  },
+  {
+    "name": "application.resumed",
+    "payload": {
+      "applicationId": "application_mo44tkoh_3h_88597382",
+      "userId": "user_alex_rivera_local",
+      "programId": "program_mo44tko8_2g_80012d10",
+      "resumedAt": "2026-04-18T09:25:49.171Z",
+      "pendingApprovals": 6,
+      "resolvedApprovals": 0,
+      "status": "awaiting_user"
+    }
+  }
+]

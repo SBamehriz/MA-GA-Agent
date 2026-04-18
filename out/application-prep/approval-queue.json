@@ -1,0 +1,588 @@
+[
+  {
+    "id": "approval_program_mo44tkei_1p_7e78c519__approve_sop",
+    "actionType": "approve_draft",
+    "status": "pending",
+    "defaultAction": "approve",
+    "userId": "user_alex_rivera_local",
+    "programId": "program_mo44tkei_1p_7e78c519",
+    "universityId": "university_mo44tkeh_1j_6a291df3",
+    "fundingId": "funding_mo44tkek_1t_e4f52557",
+    "artifactId": "req_primary_sop",
+    "artifactKind": "sop",
+    "reason": "Statement of Purpose passed grounding, critic, and style checks.",
+    "actionRequired": "Review and approve draft before packaging.",
+    "grounding": {
+      "verifiableClaims": 18,
+      "supportedClaims": 18,
+      "unsupportedClaims": 0,
+      "passed": true,
+      "profileFieldKeys": [
+        "full_name",
+        "motivation_statement",
+        "target_degree",
+        "target_focus_areas",
+        "target_intake",
+        "undergraduate_degree",
+        "undergraduate_gpa",
+        "undergraduate_institution"
+      ],
+      "verifiedStoryIds": [
+        "story_multi_agent_rl_pantry",
+        "story_nlp_lab_retrieval"
+      ],
+      "programIds": [
+        "program_mo44tkei_1p_7e78c519"
+      ],
+      "fundingIds": [
+        "funding_mo44tkek_1t_e4f52557"
+      ],
+      "personRoleIds": [
+        "personRole_mo44tkel_23_479ab8c9"
+      ],
+      "professionalProfileIds": [
+        "profile_mo44tkem_2c_ba2f34e8"
+      ],
+      "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+    },
+    "evidence": {
+      "programEvidenceIds": [],
+      "universityEvidenceIds": [
+        "evidence_mo44tkeh_1k_2400b08e"
+      ],
+      "fundingEvidenceIds": [],
+      "personRoleEvidenceIds": [],
+      "professionalProfileEvidenceIds": [],
+      "exampleQuotes": [
+        "[UGA about page] The University of Georgia is a public, R1 research university chartered in 1785. Its School of Computing offers graduate degrees and resear…"
+      ]
+    },
+    "checklistItemIds": [
+      "checklist_program_mo44tkei_1p_7e78c519__sop"
+    ],
+    "createdAt": "2026-04-18T09:25:48.822Z"
+  },
+  {
+    "id": "approval_program_mo44tkei_1p_7e78c519__edit_resume",
+    "actionType": "edit_required",
+    "status": "pending",
+    "defaultAction": "edit",
+    "userId": "user_alex_rivera_local",
+    "programId": "program_mo44tkei_1p_7e78c519",
+    "universityId": "university_mo44tkeh_1j_6a291df3",
+    "fundingId": "funding_mo44tkek_1t_e4f52557",
+    "artifactId": "req_primary_resume_tailoring",
+    "artifactKind": "resume_tailoring",
+    "reason": "Resume / CV (tailored) draft needs edits: style check failed: mean sentence length 9.7 words is 8.4 words off voice anchor (18.1); allowed ±6.; first-person ratio 0.020 below required 0.052 (voice anchor ratio 0.105)..",
+    "actionRequired": "Open draft, address warnings, and re-run writing cycle before approval.",
+    "grounding": {
+      "verifiableClaims": 14,
+      "supportedClaims": 14,
+      "unsupportedClaims": 0,
+      "passed": true,
+      "profileFieldKeys": [
+        "full_name",
+        "graduation_year",
+        "primary_email",
+        "target_focus_areas",
+        "undergraduate_degree",
+        "undergraduate_gpa",
+        "undergraduate_institution"
+      ],
+      "verifiedStoryIds": [
+        "story_multi_agent_rl_pantry",
+        "story_nlp_lab_retrieval"
+      ],
+      "programIds": [
+        "program_mo44tkei_1p_7e78c519"
+      ],
+      "fundingIds": [],
+      "personRoleIds": [
+        "personRole_mo44tkel_23_479ab8c9"
+      ],
+      "professionalProfileIds": [],
+      "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+    },
+    "evidence": {
+      "programEvidenceIds": [],
+      "universityEvidenceIds": [
+        "evidence_mo44tkeh_1k_2400b08e"
+      ],
+      "fundingEvidenceIds": [],
+      "personRoleEvidenceIds": [],
+      "professionalProfileEvidenceIds": [],
+      "exampleQuotes": [
+        "[UGA about page] The University of Georgia is a public, R1 research university chartered in 1785. Its School of Computing offers graduate degrees and resear…"
+      ]
+    },
+    "checklistItemIds": [
+      "checklist_program_mo44tkei_1p_7e78c519__resume"
+    ],
+    "createdAt": "2026-04-18T09:25:48.822Z"
+  },
+  {
+    "id": "approval_program_mo44tkei_1p_7e78c519__approve_personal_statement",
+    "actionType": "approve_draft",
+    "status": "pending",
+    "defaultAction": "approve",
+    "userId": "user_alex_rivera_local",
+    "programId": "program_mo44tkei_1p_7e78c519",
+    "universityId": "university_mo44tkeh_1j_6a291df3",
+    "fundingId": "funding_mo44tkek_1t_e4f52557",
+    "artifactId": "req_primary_personal_statement",
+    "artifactKind": "personal_statement",
+    "reason": "Personal statement (optional essay) passed grounding, critic, and style checks.",
+    "actionRequired": "Review and approve draft before packaging.",
+    "grounding": {
+      "verifiableClaims": 8,
+      "supportedClaims": 8,
+      "unsupportedClaims": 0,
+      "passed": true,
+      "profileFieldKeys": [
+        "full_name",
+        "motivation_statement",
+        "target_focus_areas",
+        "undergraduate_institution"
+      ],
+      "verifiedStoryIds": [
+        "story_nlp_lab_retrieval"
+      ],
+      "programIds": [
+        "program_mo44tkei_1p_7e78c519"
+      ],
+      "fundingIds": [],
+      "personRoleIds": [],
+      "professionalProfileIds": [],
+      "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+    },
+    "evidence": {
+      "programEvidenceIds": [],
+      "universityEvidenceIds": [
+        "evidence_mo44tkeh_1k_2400b08e"
+      ],
+      "fundingEvidenceIds": [],
+      "personRoleEvidenceIds": [],
+      "professionalProfileEvidenceIds": [],
+      "exampleQuotes": [
+        "[UGA about page] The University of Georgia is a public, R1 research university chartered in 1785. Its School of Computing offers graduate degrees and resear…"
+      ]
+    },
+    "checklistItemIds": [
+      "checklist_program_mo44tkei_1p_7e78c519__personal_statement"
+    ],
+    "createdAt": "2026-04-18T09:25:48.822Z"
+  },
+  {
+    "id": "approval_program_mo44tkei_1p_7e78c519__approve_cover_letter",
+    "actionType": "approve_draft",
+    "status": "pending",
+    "defaultAction": "approve",
+    "userId": "user_alex_rivera_local",
+    "programId": "program_mo44tkei_1p_7e78c519",
+    "universityId": "university_mo44tkeh_1j_6a291df3",
+    "fundingId": "funding_mo44tkek_1t_e4f52557",
+    "artifactId": "req_primary_cover_letter",
+    "artifactKind": "cover_letter",
+    "reason": "Cover letter for Graduate Research Assistantship - NLP Lab passed grounding, critic, and style checks.",
+    "actionRequired": "Review and approve draft before packaging.",
+    "grounding": {
+      "verifiableClaims": 12,
+      "supportedClaims": 12,
+      "unsupportedClaims": 0,
+      "passed": true,
+      "profileFieldKeys": [
+        "full_name",
+        "primary_email",
+        "target_degree",
+        "target_intake"
+      ],
+      "verifiedStoryIds": [
+        "story_nlp_lab_retrieval"
+      ],
+      "programIds": [
+        "program_mo44tkei_1p_7e78c519"
+      ],
+      "fundingIds": [
+        "funding_mo44tkek_1t_e4f52557"
+      ],
+      "personRoleIds": [
+        "personRole_mo44tkel_23_479ab8c9"
+      ],
+      "professionalProfileIds": [
+        "profile_mo44tkem_2c_ba2f34e8"
+      ],
+      "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+    },
+    "evidence": {
+      "programEvidenceIds": [],
+      "universityEvidenceIds": [
+        "evidence_mo44tkeh_1k_2400b08e"
+      ],
+      "fundingEvidenceIds": [],
+      "personRoleEvidenceIds": [],
+      "professionalProfileEvidenceIds": [],
+      "exampleQuotes": [
+        "[UGA about page] The University of Georgia is a public, R1 research university chartered in 1785. Its School of Computing offers graduate degrees and resear…"
+      ]
+    },
+    "checklistItemIds": [
+      "checklist_program_mo44tkei_1p_7e78c519__cover_letter"
+    ],
+    "createdAt": "2026-04-18T09:25:48.822Z"
+  },
+  {
+    "id": "approval_program_mo44tkei_1p_7e78c519__missing_test_score_report",
+    "actionType": "missing_input",
+    "status": "pending",
+    "defaultAction": "edit",
+    "userId": "user_alex_rivera_local",
+    "programId": "program_mo44tkei_1p_7e78c519",
+    "universityId": "university_mo44tkeh_1j_6a291df3",
+    "fundingId": "funding_mo44tkek_1t_e4f52557",
+    "artifactId": null,
+    "artifactKind": null,
+    "reason": "Test score report (TOEFL/IELTS or GRE if required) is missing from the profile revision.",
+    "actionRequired": "Upload test score report (TOEFL / IELTS / GRE) as a source document.",
+    "grounding": null,
+    "evidence": {
+      "programEvidenceIds": [],
+      "universityEvidenceIds": [
+        "evidence_mo44tkeh_1k_2400b08e"
+      ],
+      "fundingEvidenceIds": [],
+      "personRoleEvidenceIds": [],
+      "professionalProfileEvidenceIds": [],
+      "exampleQuotes": [
+        "[UGA about page] The University of Georgia is a public, R1 research university chartered in 1785. Its School of Computing offers graduate degrees and resear…"
+      ]
+    },
+    "checklistItemIds": [
+      "checklist_program_mo44tkei_1p_7e78c519__test_score_report"
+    ],
+    "createdAt": "2026-04-18T09:25:48.822Z"
+  },
+  {
+    "id": "approval_program_mo44tkei_1p_7e78c519__missing_application_fee_or_waiver",
+    "actionType": "missing_input",
+    "status": "pending",
+    "defaultAction": "edit",
+    "userId": "user_alex_rivera_local",
+    "programId": "program_mo44tkei_1p_7e78c519",
+    "universityId": "university_mo44tkeh_1j_6a291df3",
+    "fundingId": "funding_mo44tkek_1t_e4f52557",
+    "artifactId": null,
+    "artifactKind": null,
+    "reason": "Application fee or fee waiver is missing from the profile revision.",
+    "actionRequired": "Record fee-waiver status or confirm fee payment plan for this program.",
+    "grounding": null,
+    "evidence": {
+      "programEvidenceIds": [],
+      "universityEvidenceIds": [
+        "evidence_mo44tkeh_1k_2400b08e"
+      ],
+      "fundingEvidenceIds": [],
+      "personRoleEvidenceIds": [],
+      "professionalProfileEvidenceIds": [],
+      "exampleQuotes": [
+        "[UGA about page] The University of Georgia is a public, R1 research university chartered in 1785. Its School of Computing offers graduate degrees and resear…"
+      ]
+    },
+    "checklistItemIds": [
+      "checklist_program_mo44tkei_1p_7e78c519__application_fee_or_waiver"
+    ],
+    "createdAt": "2026-04-18T09:25:48.822Z"
+  },
+  {
+    "id": "approval_program_mo44tkem_2g_f6c9cada__approve_sop",
+    "actionType": "approve_draft",
+    "status": "pending",
+    "defaultAction": "approve",
+    "userId": "user_alex_rivera_local",
+    "programId": "program_mo44tkem_2g_f6c9cada",
+    "universityId": "university_mo44tkeh_1l_33afb1da",
+    "fundingId": "funding_mo44tkem_2m_4be272f5",
+    "artifactId": "req_secondary_sop",
+    "artifactKind": "sop",
+    "reason": "Statement of Purpose passed grounding, critic, and style checks.",
+    "actionRequired": "Review and approve draft before packaging.",
+    "grounding": {
+      "verifiableClaims": 18,
+      "supportedClaims": 18,
+      "unsupportedClaims": 0,
+      "passed": true,
+      "profileFieldKeys": [
+        "full_name",
+        "motivation_statement",
+        "target_degree",
+        "target_focus_areas",
+        "target_intake",
+        "undergraduate_degree",
+        "undergraduate_gpa",
+        "undergraduate_institution"
+      ],
+      "verifiedStoryIds": [
+        "story_multi_agent_rl_pantry",
+        "story_nlp_lab_retrieval"
+      ],
+      "programIds": [
+        "program_mo44tkem_2g_f6c9cada"
+      ],
+      "fundingIds": [
+        "funding_mo44tkem_2m_4be272f5"
+      ],
+      "personRoleIds": [
+        "personRole_mo44tken_2w_0af55679"
+      ],
+      "professionalProfileIds": [
+        "profile_mo44tken_34_98eae864"
+      ],
+      "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+    },
+    "evidence": {
+      "programEvidenceIds": [],
+      "universityEvidenceIds": [
+        "evidence_mo44tkeh_1m_a401caed"
+      ],
+      "fundingEvidenceIds": [],
+      "personRoleEvidenceIds": [],
+      "professionalProfileEvidenceIds": [],
+      "exampleQuotes": [
+        "[Georgia Tech about page] The Georgia Institute of Technology is a public, R1 research university based in Atlanta, Georgia. Its College of Computing and School of I…"
+      ]
+    },
+    "checklistItemIds": [
+      "checklist_program_mo44tkem_2g_f6c9cada__sop"
+    ],
+    "createdAt": "2026-04-18T09:25:48.824Z"
+  },
+  {
+    "id": "approval_program_mo44tkem_2g_f6c9cada__edit_resume",
+    "actionType": "edit_required",
+    "status": "pending",
+    "defaultAction": "edit",
+    "userId": "user_alex_rivera_local",
+    "programId": "program_mo44tkem_2g_f6c9cada",
+    "universityId": "university_mo44tkeh_1l_33afb1da",
+    "fundingId": "funding_mo44tkem_2m_4be272f5",
+    "artifactId": "req_secondary_resume_tailoring",
+    "artifactKind": "resume_tailoring",
+    "reason": "Resume / CV (tailored) draft needs edits: style check failed: mean sentence length 10.1 words is 8.0 words off voice anchor (18.1); allowed ±6.; first-person ratio 0.019 below required 0.052 (voice anchor ratio 0.105)..",
+    "actionRequired": "Open draft, address warnings, and re-run writing cycle before approval.",
+    "grounding": {
+      "verifiableClaims": 14,
+      "supportedClaims": 14,
+      "unsupportedClaims": 0,
+      "passed": true,
+      "profileFieldKeys": [
+        "full_name",
+        "graduation_year",
+        "primary_email",
+        "target_focus_areas",
+        "undergraduate_degree",
+        "undergraduate_gpa",
+        "undergraduate_institution"
+      ],
+      "verifiedStoryIds": [
+        "story_multi_agent_rl_pantry",
+        "story_nlp_lab_retrieval"
+      ],
+      "programIds": [
+        "program_mo44tkem_2g_f6c9cada"
+      ],
+      "fundingIds": [],
+      "personRoleIds": [
+        "personRole_mo44tken_2w_0af55679"
+      ],
+      "professionalProfileIds": [],
+      "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+    },
+    "evidence": {
+      "programEvidenceIds": [],
+      "universityEvidenceIds": [
+        "evidence_mo44tkeh_1m_a401caed"
+      ],
+      "fundingEvidenceIds": [],
+      "personRoleEvidenceIds": [],
+      "professionalProfileEvidenceIds": [],
+      "exampleQuotes": [
+        "[Georgia Tech about page] The Georgia Institute of Technology is a public, R1 research university based in Atlanta, Georgia. Its College of Computing and School of I…"
+      ]
+    },
+    "checklistItemIds": [
+      "checklist_program_mo44tkem_2g_f6c9cada__resume"
+    ],
+    "createdAt": "2026-04-18T09:25:48.824Z"
+  },
+  {
+    "id": "approval_program_mo44tkem_2g_f6c9cada__approve_personal_statement",
+    "actionType": "approve_draft",
+    "status": "pending",
+    "defaultAction": "approve",
+    "userId": "user_alex_rivera_local",
+    "programId": "program_mo44tkem_2g_f6c9cada",
+    "universityId": "university_mo44tkeh_1l_33afb1da",
+    "fundingId": "funding_mo44tkem_2m_4be272f5",
+    "artifactId": "req_secondary_personal_statement",
+    "artifactKind": "personal_statement",
+    "reason": "Personal statement (optional essay) passed grounding, critic, and style checks.",
+    "actionRequired": "Review and approve draft before packaging.",
+    "grounding": {
+      "verifiableClaims": 8,
+      "supportedClaims": 8,
+      "unsupportedClaims": 0,
+      "passed": true,
+      "profileFieldKeys": [
+        "full_name",
+        "motivation_statement",
+        "target_focus_areas",
+        "undergraduate_institution"
+      ],
+      "verifiedStoryIds": [
+        "story_nlp_lab_retrieval"
+      ],
+      "programIds": [
+        "program_mo44tkem_2g_f6c9cada"
+      ],
+      "fundingIds": [],
+      "personRoleIds": [],
+      "professionalProfileIds": [],
+      "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+    },
+    "evidence": {
+      "programEvidenceIds": [],
+      "universityEvidenceIds": [
+        "evidence_mo44tkeh_1m_a401caed"
+      ],
+      "fundingEvidenceIds": [],
+      "personRoleEvidenceIds": [],
+      "professionalProfileEvidenceIds": [],
+      "exampleQuotes": [
+        "[Georgia Tech about page] The Georgia Institute of Technology is a public, R1 research university based in Atlanta, Georgia. Its College of Computing and School of I…"
+      ]
+    },
+    "checklistItemIds": [
+      "checklist_program_mo44tkem_2g_f6c9cada__personal_statement"
+    ],
+    "createdAt": "2026-04-18T09:25:48.824Z"
+  },
+  {
+    "id": "approval_program_mo44tkem_2g_f6c9cada__approve_cover_letter",
+    "actionType": "approve_draft",
+    "status": "pending",
+    "defaultAction": "approve",
+    "userId": "user_alex_rivera_local",
+    "programId": "program_mo44tkem_2g_f6c9cada",
+    "universityId": "university_mo44tkeh_1l_33afb1da",
+    "fundingId": "funding_mo44tkem_2m_4be272f5",
+    "artifactId": "req_secondary_cover_letter",
+    "artifactKind": "cover_letter",
+    "reason": "Cover letter for Graduate Research Assistantship - Machine Learning Center passed grounding, critic, and style checks.",
+    "actionRequired": "Review and approve draft before packaging.",
+    "grounding": {
+      "verifiableClaims": 12,
+      "supportedClaims": 12,
+      "unsupportedClaims": 0,
+      "passed": true,
+      "profileFieldKeys": [
+        "full_name",
+        "primary_email",
+        "target_degree",
+        "target_intake"
+      ],
+      "verifiedStoryIds": [
+        "story_nlp_lab_retrieval"
+      ],
+      "programIds": [
+        "program_mo44tkem_2g_f6c9cada"
+      ],
+      "fundingIds": [
+        "funding_mo44tkem_2m_4be272f5"
+      ],
+      "personRoleIds": [
+        "personRole_mo44tken_2w_0af55679"
+      ],
+      "professionalProfileIds": [
+        "profile_mo44tken_34_98eae864"
+      ],
+      "voiceAnchorId": "voice_anchor_alex_rivera_2026"
+    },
+    "evidence": {
+      "programEvidenceIds": [],
+      "universityEvidenceIds": [
+        "evidence_mo44tkeh_1m_a401caed"
+      ],
+      "fundingEvidenceIds": [],
+      "personRoleEvidenceIds": [],
+      "professionalProfileEvidenceIds": [],
+      "exampleQuotes": [
+        "[Georgia Tech about page] The Georgia Institute of Technology is a public, R1 research university based in Atlanta, Georgia. Its College of Computing and School of I…"
+      ]
+    },
+    "checklistItemIds": [
+      "checklist_program_mo44tkem_2g_f6c9cada__cover_letter"
+    ],
+    "createdAt": "2026-04-18T09:25:48.824Z"
+  },
+  {
+    "id": "approval_program_mo44tkem_2g_f6c9cada__missing_test_score_report",
+    "actionType": "missing_input",
+    "status": "pending",
+    "defaultAction": "edit",
+    "userId": "user_alex_rivera_local",
+    "programId": "program_mo44tkem_2g_f6c9cada",
+    "universityId": "university_mo44tkeh_1l_33afb1da",
+    "fundingId": "funding_mo44tkem_2m_4be272f5",
+    "artifactId": null,
+    "artifactKind": null,
+    "reason": "Test score report (TOEFL/IELTS or GRE if required) is missing from the profile revision.",
+    "actionRequired": "Upload test score report (TOEFL / IELTS / GRE) as a source document.",
+    "grounding": null,
+    "evidence": {
+      "programEvidenceIds": [],
+      "universityEvidenceIds": [
+        "evidence_mo44tkeh_1m_a401caed"
+      ],
+      "fundingEvidenceIds": [],
+      "personRoleEvidenceIds": [],
+      "professionalProfileEvidenceIds": [],
+      "exampleQuotes": [
+        "[Georgia Tech about page] The Georgia Institute of Technology is a public, R1 research university based in Atlanta, Georgia. Its College of Computing and School of I…"
+      ]
+    },
+    "checklistItemIds": [
+      "checklist_program_mo44tkem_2g_f6c9cada__test_score_report"
+    ],
+    "createdAt": "2026-04-18T09:25:48.824Z"
+  },
+  {
+    "id": "approval_program_mo44tkem_2g_f6c9cada__missing_application_fee_or_waiver",
+    "actionType": "missing_input",
+    "status": "pending",
+    "defaultAction": "edit",
+    "userId": "user_alex_rivera_local",
+    "programId": "program_mo44tkem_2g_f6c9cada",
+    "universityId": "university_mo44tkeh_1l_33afb1da",
+    "fundingId": "funding_mo44tkem_2m_4be272f5",
+    "artifactId": null,
+    "artifactKind": null,
+    "reason": "Application fee or fee waiver is missing from the profile revision.",
+    "actionRequired": "Record fee-waiver status or confirm fee payment plan for this program.",
+    "grounding": null,
+    "evidence": {
+      "programEvidenceIds": [],
+      "universityEvidenceIds": [
+        "evidence_mo44tkeh_1m_a401caed"
+      ],
+      "fundingEvidenceIds": [],
+      "personRoleEvidenceIds": [],
+      "professionalProfileEvidenceIds": [],
+      "exampleQuotes": [
+        "[Georgia Tech about page] The Georgia Institute of Technology is a public, R1 research university based in Atlanta, Georgia. Its College of Computing and School of I…"
+      ]
+    },
+    "checklistItemIds": [
+      "checklist_program_mo44tkem_2g_f6c9cada__application_fee_or_waiver"
+    ],
+    "createdAt": "2026-04-18T09:25:48.824Z"
+  }
+]

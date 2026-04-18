@@ -1,0 +1,177 @@
+{
+  "generatedAt": "2026-04-18T09:25:49.240Z",
+  "applicationId": "application_mo44tkoh_3h_88597382",
+  "programId": "program_mo44tko8_2g_80012d10",
+  "universityId": "university_mo44tko5_1l_fff1003b",
+  "fundingId": "funding_mo44tko9_2m_11c24be6",
+  "applicationStatus": "awaiting_user",
+  "readiness": {
+    "status": "blocked",
+    "readyItems": 4,
+    "warningItems": 1,
+    "missingItems": 0,
+    "userInputItems": 2,
+    "deferredItems": 1,
+    "totalItems": 8,
+    "blockers": [
+      "needs user input for required application_fee_or_waiver: Application fee or fee waiver"
+    ],
+    "warnings": [
+      "[resume] style check failed: mean sentence length 10.1 words is 8.0 words off voice anchor (18.1); allowed ±6.; first-person ratio 0.019 below required 0.052 (voice anchor ratio 0.105)."
+    ]
+  },
+  "resume": {
+    "originalFilePath": "C:\\Users\\ASUS\\Documents\\Work\\APPS\\MA-GA-Agent\\fixtures\\seeds\\materials\\alex-rivera-resume-2026.pdf",
+    "originalFileExists": false,
+    "originalLabel": "Alex Rivera - Resume (2026 applications)",
+    "tailoredArtifactId": "appArtifact_mo44tkoh_3j_33d4ec59",
+    "tailoredStatus": "style_failed",
+    "tailoredFilePath": "C:\\Users\\ASUS\\Documents\\Work\\APPS\\MA-GA-Agent\\out\\full-cycle\\packets\\application_mo44tkoh_3h_88597382\\resume-tailored.md",
+    "version": "tailored"
+  },
+  "coverLetter": {
+    "artifactId": "appArtifact_mo44tkoh_3l_b0af1894",
+    "status": "ready",
+    "filePath": "C:\\Users\\ASUS\\Documents\\Work\\APPS\\MA-GA-Agent\\out\\full-cycle\\packets\\application_mo44tkoh_3h_88597382\\cover-letter.md"
+  },
+  "essays": [
+    {
+      "artifactId": "appArtifact_mo44tkoh_3i_f23cb05f",
+      "kind": "sop",
+      "status": "ready",
+      "wordCount": 450,
+      "filePath": "C:\\Users\\ASUS\\Documents\\Work\\APPS\\MA-GA-Agent\\out\\full-cycle\\packets\\application_mo44tkoh_3h_88597382\\sop.md"
+    },
+    {
+      "artifactId": "appArtifact_mo44tkoh_3k_365ab6f3",
+      "kind": "personal_statement",
+      "status": "ready",
+      "wordCount": 211,
+      "filePath": "C:\\Users\\ASUS\\Documents\\Work\\APPS\\MA-GA-Agent\\out\\full-cycle\\packets\\application_mo44tkoh_3h_88597382\\personal-statement.md"
+    }
+  ],
+  "checklistStatus": [
+    {
+      "id": "checklist_program_mo44tko8_2g_80012d10__sop",
+      "kind": "sop",
+      "required": true,
+      "status": "complete",
+      "notes": []
+    },
+    {
+      "id": "checklist_program_mo44tko8_2g_80012d10__resume",
+      "kind": "resume",
+      "required": true,
+      "status": "ready_with_warnings",
+      "notes": [
+        "style check failed: mean sentence length 10.1 words is 8.0 words off voice anchor (18.1); allowed ±6.; first-person ratio 0.019 below required 0.052 (voice anchor ratio 0.105)."
+      ]
+    },
+    {
+      "id": "checklist_program_mo44tko8_2g_80012d10__transcript",
+      "kind": "transcript",
+      "required": true,
+      "status": "complete",
+      "notes": []
+    },
+    {
+      "id": "checklist_program_mo44tko8_2g_80012d10__recommendation_letter",
+      "kind": "recommendation_letter",
+      "required": true,
+      "status": "deferred",
+      "notes": [
+        "Handled outside the system (portal invites recommender; system never contacts on user's behalf)."
+      ]
+    },
+    {
+      "id": "checklist_program_mo44tko8_2g_80012d10__test_score_report",
+      "kind": "test_score_report",
+      "required": false,
+      "status": "needs_user_input",
+      "notes": [
+        "No test_score_report registered on profile revision."
+      ]
+    },
+    {
+      "id": "checklist_program_mo44tko8_2g_80012d10__application_fee_or_waiver",
+      "kind": "application_fee_or_waiver",
+      "required": true,
+      "status": "needs_user_input",
+      "notes": [
+        "No application_fee_or_waiver registered on profile revision."
+      ]
+    },
+    {
+      "id": "checklist_program_mo44tko8_2g_80012d10__personal_statement",
+      "kind": "personal_statement",
+      "required": false,
+      "status": "complete",
+      "notes": []
+    },
+    {
+      "id": "checklist_program_mo44tko8_2g_80012d10__cover_letter",
+      "kind": "cover_letter",
+      "required": true,
+      "status": "complete",
+      "notes": [
+        "critic warn: missing_university_anchor — Draft contains no university-level claim; consider adding a university-scope marker."
+      ]
+    }
+  ],
+  "readinessFlags": {
+    "resume": "ready_with_warnings",
+    "coverLetter": "ready",
+    "sop": "ready",
+    "personalStatement": "ready",
+    "shortAnswers": "ready",
+    "transcript": "ready",
+    "testScores": "not_required",
+    "fee": "needs_input",
+    "recommenders": "deferred_to_portal",
+    "overall": "blocked"
+  },
+  "pendingApprovals": [
+    {
+      "id": "approval_mo44tkoh_3m_1e318669",
+      "artifactId": "appArtifact_mo44tkoh_3i_f23cb05f",
+      "actionType": "approve_draft",
+      "reason": "Statement of Purpose passed grounding, critic, and style checks.",
+      "status": "pending"
+    },
+    {
+      "id": "approval_mo44tkoh_3n_4360d6dc",
+      "artifactId": "appArtifact_mo44tkoh_3j_33d4ec59",
+      "actionType": "edit_required",
+      "reason": "Resume / CV (tailored) draft needs edits: style check failed: mean sentence length 10.1 words is 8.0 words off voice anchor (18.1); allowed ±6.; first-person ratio 0.019 below required 0.052 (voice anchor ratio 0.105)..",
+      "status": "pending"
+    },
+    {
+      "id": "approval_mo44tkoh_3o_eaa59e65",
+      "artifactId": "appArtifact_mo44tkoh_3k_365ab6f3",
+      "actionType": "approve_draft",
+      "reason": "Personal statement (optional essay) passed grounding, critic, and style checks.",
+      "status": "pending"
+    },
+    {
+      "id": "approval_mo44tkoh_3p_8d8cc148",
+      "artifactId": "appArtifact_mo44tkoh_3l_b0af1894",
+      "actionType": "approve_draft",
+      "reason": "Cover letter for Graduate Research Assistantship - Machine Learning Center passed grounding, critic, and style checks.",
+      "status": "pending"
+    },
+    {
+      "id": "approval_mo44tkoh_3q_d0aca4ef",
+      "artifactId": null,
+      "actionType": "missing_input",
+      "reason": "Test score report (TOEFL/IELTS or GRE if required) is missing from the profile revision.",
+      "status": "pending"
+    },
+    {
+      "id": "approval_mo44tkoh_3r_555c1ef3",
+      "artifactId": null,
+      "actionType": "missing_input",
+      "reason": "Application fee or fee waiver is missing from the profile revision.",
+      "status": "pending"
+    }
+  ]
+}
