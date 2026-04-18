@@ -1,0 +1,1 @@
+export const CONTACTS_PACKAGE = "@ma-ga-agent/contacts";

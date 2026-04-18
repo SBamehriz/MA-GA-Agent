@@ -1,0 +1,1 @@
+export const CRAWLERS_PACKAGE = "@ma-ga-agent/crawlers";

@@ -12,6 +12,7 @@
 
 - **Single pnpm workspace.** One `package.json` at the root; per-package `package.json` in each `/packages/*` and in `/worker-browser`.
 - **App is thin.** `/app` contains UI and Route Handlers only; all business logic lives in `/packages/*`.
+- **Scripts-first for early local work.** `/scripts` is the preferred execution surface for onboarding-memory, discovery runs, and other local operator tasks before UI work is prioritized.
 - **No cross-package cycles.** Enforced by `madge` or `eslint-plugin-boundaries`.
 - **Boundary = contract.** Each package exports a `index.ts` barrel; cross-package imports go only through the barrel.
 - **Browser worker is a separate deployable**, not a package, because its runtime (Node + Chromium) differs from the Next.js runtime.
@@ -23,7 +24,7 @@
 
 ```
 ma-ga-agent/
-├── app/                         # Next.js 16 App Router
+├── app/                         # optional local operator console; not the early priority
 ├── packages/
 │   ├── db/
 │   ├── shared/
@@ -39,7 +40,7 @@ ma-ga-agent/
 │   ├── approvals/
 │   └── ui/
 ├── worker-browser/              # Fly.io / Hetzner VM deployable
-├── scripts/
+├── scripts/                     # preferred early local execution surfaces
 ├── fixtures/
 │   ├── golden/
 │   └── seeds/
@@ -75,6 +76,8 @@ ma-ga-agent/
 ## 3. `/app` — Next.js 16 App Router
 
 Thin UI + Route Handlers only. No business logic.
+
+Current priority note: the onboarding-memory slice may be driven entirely from `/scripts` and `/packages/*`. Most routes below can remain placeholders until local operator workflows need a review surface.
 
 ```
 app/

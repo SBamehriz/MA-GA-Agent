@@ -10,7 +10,7 @@
 
 ## 1. Schema Conventions
 
-- **Database:** Neon Postgres. pgvector extension enabled for `voice_anchor.embedding`.
+- **Database:** local-first Postgres-compatible schema. Hosted Postgres remains optional; `pgvector` is only required once voice-anchor similarity is activated.
 - **ORM:** Drizzle.
 - **IDs:** UUIDv7 (`uuid` column, generated server-side via `uuidv7()` helper).
 - **Timestamps:** `timestamptz`, default `now()`.
@@ -47,13 +47,14 @@ All enums are Postgres enums, narrow and versioned.
 | `role_tag` | `professor`, `pi`, `dgs`, `coordinator`, `hr`, `lab_manager`, `staff`, `other` |
 | `application_status` | `queued`, `preparing`, `draft_saved`, `awaiting_user`, `submitted`, `confirmed`, `declined_by_user`, `skipped`, `error` |
 | `artifact_kind` | `sop`, `ps`, `short_answer`, `cv`, `cover_letter` |
-| `approval_action_type` | `submit_application`, `pay_fee`, `send_email`, `send_linkedin_msg`, `request_recommender`, `finalize_essay`, `create_account`, `approve_batch`, `resume_session_2fa`, `confirm_field_mapping`, `confirm_conflict`, `approve_outreach` |
+| `approval_action_type` | `submit_application`, `pay_fee`, `send_email`, `send_linkedin_msg`, `request_recommender`, `finalize_essay`, `attest_profile`, `create_account`, `approve_batch`, `resume_session_2fa`, `confirm_field_mapping`, `confirm_conflict`, `approve_outreach` |
 | `approval_default_action` | `approve`, `edit`, `skip` |
 | `approval_status` | `pending`, `approved`, `edited`, `skipped`, `expired` |
 | `actor_type` | `system`, `user` |
 | `action_outcome` | `success`, `failure`, `partial` |
 | `idempotency_status` | `reserved`, `completed`, `failed` |
 | `vault_provider` | `onepassword`, `bitwarden`, `user_session` |
+| `profile_source_document_kind` | `resume`, `transcript`, `voice_sample`, `other` |
 | `essay_tag` | `sop`, `ps`, `diversity`, `research`, `why_program` |
 | `test_type` | `GRE`, `GRE_subject`, `TOEFL`, `IELTS`, `DET` |
 
@@ -66,13 +67,13 @@ All enums are Postgres enums, narrow and versioned.
 | Column | Type | Constraints |
 |---|---|---|
 | `id` | `uuid` | PK, `uuidv7()` |
-| `email` | `text` | UNIQUE NOT NULL |
+| `email` | `text` | UNIQUE, nullable for purely local runs |
 | `active_revision_id` | `uuid` | FK → `user_profile_revision.id`, nullable until first revision |
 | `preferences_json` | `jsonb` | NOT NULL default `{}` |
 | `quiet_hours` | `jsonb` | NOT NULL default `{ "start": "22:00", "end": "08:00", "tz": "America/Chicago" }` |
 | `created_at` / `updated_at` | `timestamptz` | defaults |
 
-**Rule (MVP single-tenant):** application-level check limits `user` row count to 1. No raw credentials in `preferences_json` (see §9).
+**Rule (MVP single-tenant):** application-level check limits `user` row count to 1. No auth provider is required for the first local block. No raw credentials in `preferences_json` (see §9).
 
 ---
 
@@ -102,8 +103,33 @@ Child tables (all scoped by `revision_id`, all INSERT-only after revision attest
 - `profile_tests`
 - `profile_portfolio`
 - `profile_recommender`
+- `profile_source_document`
 
 Field shape per [data-model.md §4.2](data-model.md). Each child table has `(revision_id, ord)` sort key.
+
+---
+
+### 3.2a `profile_source_document`
+
+Tracks the user-owned materials ingested during onboarding before any writing or application prep occurs.
+
+| Column | Type | Constraints |
+|---|---|---|
+| `id` | `uuid` | PK |
+| `user_id` | `uuid` | FK |
+| `revision_id` | `uuid` | FK → `user_profile_revision.id` |
+| `kind` | `profile_source_document_kind` | NOT NULL |
+| `label` | `text` | NOT NULL |
+| `storage_ref` | `text` | NOT NULL |
+| `media_type` | `text` | NOT NULL |
+| `content_hash` | `text` | NOT NULL |
+| `extracted_text` | `text` | nullable |
+| `metadata_json` | `jsonb` | NOT NULL default `'{}'::jsonb` |
+| `created_at` | `timestamptz` | default `now()` |
+
+Indexes:
+- `(revision_id, kind, created_at DESC)`
+- `(content_hash)`
 
 ---
 
@@ -118,7 +144,7 @@ Field shape per [data-model.md §4.2](data-model.md). Each child table has `(rev
 | `summary` | `text` | NOT NULL |
 | `proof_points` | `text[]` | NOT NULL, `array_length >= 1` |
 | `themes` | `text[]` | NOT NULL |
-| `source_refs` | `text[]` | ids of profile fields referenced |
+| `source_refs` | `text[]` | ids of profile fields and/or `profile_source_document` rows referenced |
 | `verified_by_user` | `boolean` | NOT NULL default `false` |
 
 **Invariant:** writing artifacts cannot reference a `story` where `verified_by_user = false`. Enforced in `packages/writing/fact-check.ts` and reinforced by a DB VIEW that exposes only verified stories to the writing layer.
@@ -132,11 +158,11 @@ Field shape per [data-model.md §4.2](data-model.md). Each child table has `(rev
 | `id` | `uuid` | PK |
 | `user_id` | `uuid` | FK |
 | `sample_text` | `text` | NOT NULL |
-| `embedding` | `vector(1536)` | NOT NULL |
-| `model_name` | `text` | NOT NULL; embedding model identifier (pinned per [risks.md R25](risks.md)) |
+| `embedding` | `vector(1536)` | nullable until style similarity is enabled |
+| `model_name` | `text` | nullable; embedding model identifier when present (pinned per [risks.md R25](risks.md)) |
 | `created_at` | `timestamptz` | |
 
-Index: HNSW on `embedding` per [data-model.md §9](data-model.md).
+Index: HNSW on `embedding` per [data-model.md §9](data-model.md) when embeddings are enabled.
 
 ---
 
@@ -389,7 +415,7 @@ Per-section status + DOM snapshot reference.
 
 ### 7.3 `application_artifact`
 
-Per [data-model.md §6.3](data-model.md). `content_ref` points to Vercel Blob with signed URL; `draft_version` increments; `approved_by_user_at` set only by an approval resolution.
+Per [data-model.md §6.3](data-model.md). `content_ref` points to a local file path or later storage handle; `draft_version` increments; `approved_by_user_at` set only by an approval resolution.
 
 ### 7.4 `approval_request`
 

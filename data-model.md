@@ -9,7 +9,7 @@ Read [CLAUDE.md](CLAUDE.md) before editing.
 
 ## 1. Conventions
 
-- **Postgres on Neon.** Drizzle ORM. pgvector for embeddings.
+- **Local-first Postgres-compatible model.** Start with a local Postgres-shaped schema and Drizzle-friendly types; hosted Postgres remains an optional later deployment choice.
 - **IDs are UUIDv7** (time-ordered, sortable, globally unique).
 - **Timestamps** are `timestamptz`, UTC-stored.
 - **Enums** are Postgres enums, narrow and versioned.
@@ -90,7 +90,7 @@ SLAs are enforced at query time. A record past SLA is **blocked from use** (UI, 
 | Column | Type | Notes |
 |---|---|---|
 | id | uuidv7 PK | |
-| email | text UNIQUE | verified via Clerk |
+| email | text UNIQUE nullable | optional local owner identifier; auth-provider binding can be added later |
 | created_at / updated_at | timestamptz | |
 | active_revision_id | uuidv7 FK | points to `user_profile_revision` |
 | preferences_json | jsonb | merged preferences; see 4.4 |
@@ -149,6 +149,22 @@ Child tables (each scoped to revision_id):
 #### `profile_preferences` (logical — stored in `user.preferences_json`)
 - target_countries[], target_states[], tuition_cap, willing_to_pay_fee_max_total, willing_to_pay_fee_per_app, funding_priority_order[], modality_preferences[], thesis_option, pi_named[], research_themes[], approval_batching, outreach_tone, do_not_contact[], writing_voice_sample, phrases_to_avoid[], data_sharing_allowlist[], credential_handling_mode.
 
+#### `profile_source_document`
+
+| Column | Type | Notes |
+|---|---|---|
+| id | uuidv7 PK | |
+| user_id | FK | |
+| revision_id | FK | |
+| kind | enum | `resume`, `transcript`, `voice_sample`, `other` |
+| label | text | user-facing label |
+| storage_ref | text | local file path, content ref, or future blob handle |
+| media_type | text | MIME or coarse file type |
+| content_hash | text | dedupe / replay support |
+| extracted_text | text nullable | normalized text used during onboarding |
+| metadata_json | jsonb | parse metadata, file stats, parser hints |
+| created_at | timestamptz | |
+
 #### `story`
 
 | Column | Type | Notes |
@@ -160,7 +176,7 @@ Child tables (each scoped to revision_id):
 | summary | text | |
 | proof_points | text[] | concrete details |
 | themes | text[] | e.g., `ownership`, `debugging-under-pressure` |
-| source_refs | text[] | profile field ids this story draws from |
+| source_refs | text[] | profile field ids and/or `profile_source_document` ids this story draws from |
 | verified_by_user | bool | REQUIRED `true` before any writing use |
 
 #### `voice_anchor`
@@ -170,7 +186,8 @@ Child tables (each scoped to revision_id):
 | id | uuidv7 PK | |
 | user_id | FK | |
 | sample_text | text | 3–5 paragraphs of the user's own writing |
-| embedding | vector(1536) | pgvector, for style similarity check |
+| embedding | vector(1536) nullable | populated when style-similarity checks are enabled |
+| model_name | text nullable | embedding model identifier when `embedding` is present |
 
 #### `vault_reference` (no raw credentials, ever)
 
@@ -443,7 +460,7 @@ For ambiguous interpretations where sources disagree.
 |---|---|---|
 | id | uuidv7 PK | |
 | user_id | FK | |
-| action_type | enum | `submit_application`, `pay_fee`, `send_email`, `send_linkedin_msg`, `request_recommender`, `finalize_essay`, `create_account`, `approve_batch`, `resume_session_2fa`, `confirm_field_mapping`, `confirm_conflict`, `approve_outreach` |
+| action_type | enum | `submit_application`, `pay_fee`, `send_email`, `send_linkedin_msg`, `request_recommender`, `finalize_essay`, `attest_profile`, `create_account`, `approve_batch`, `resume_session_2fa`, `confirm_field_mapping`, `confirm_conflict`, `approve_outreach` |
 | target_ref | jsonb | |
 | payload | jsonb | |
 | evidence_summary | jsonb | |

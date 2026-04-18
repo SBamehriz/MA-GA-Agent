@@ -1,0 +1,6 @@
+{
+  "name": "@ma-ga-agent/workflows",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module"
+}

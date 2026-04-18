@@ -1,0 +1,1 @@
+export const SYSTEM_PROMPT = "Placeholder prompt for UniversityDiscoveryAgent. See agent-prompts.md.";

@@ -1,0 +1,1 @@
+export const PORTAL_ADAPTERS_PACKAGE = "@ma-ga-agent/portal-adapters";

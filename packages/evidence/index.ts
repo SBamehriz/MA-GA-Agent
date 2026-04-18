@@ -1,0 +1,1 @@
+export const EVIDENCE_PACKAGE = "@ma-ga-agent/evidence";

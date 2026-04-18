@@ -13,6 +13,7 @@
 - **Inputs and outputs are Zod-schema typed** in every package barrel.
 - **No untyped any at boundaries.** `any` is forbidden in exported signatures.
 - **Sync vs async:** Server Actions and Route Handlers for user requests; Inngest steps for anything long-running (> 1 s) or side-effecting.
+- **Local script surfaces are first-class.** The current onboarding-memory slice may call the same package contracts from `/scripts` without requiring auth, web routes, or deployment plumbing.
 - **Approval-triggered operations** are never exposed as direct endpoints; they are always resolved through the approval queue.
 - **Worker operations** (Playwright) are called only from within Inngest steps, never from a Route Handler.
 - **Idempotency keys** are required on every external side-effect and are computed in `packages/shared/idempotency.ts`.
@@ -101,6 +102,7 @@ Server Actions live inside pages under `/app`. They call typed queries in `packa
 
 ### 4.1 Onboarding actions
 
+- Current implementation note: these actions may exist first as local script or package calls; a web surface is optional.
 - `saveIdentity(input)` → `UserProfileIngestionAgent.run({ section: 'identity', input })`.
 - `uploadTranscript(fileRef)` → worker-less PDF parse → profile child tables.
 - `uploadResume(fileRef)` → resume parse → profile child tables.
@@ -135,7 +137,7 @@ Server Actions live inside pages under `/app`. They call typed queries in `packa
 
 Every Server Action:
 
-- Extracts `userId` via Clerk.
+- Extracts `userId` via Clerk when invoked from the web app; local scripts may inject the single local user id directly.
 - Validates input via Zod.
 - Writes an `action_log` row for anything that mutates externally.
 - Never bypasses the evidence validator.
@@ -355,6 +357,7 @@ All of these are behind the approval queue. The owning workflow emits an approva
 | Confirm conflict | `confirm_conflict` | `(user, subject, field_name)` |
 | Resume session with 2FA | `resume_session_2fa` | `(user, portal, session_id)` |
 | Finalize essay | `finalize_essay` | `(user, artifact_id, draft_version)` |
+| Attest onboarding profile | `attest_profile` | `(user, profile_revision_id)` |
 
 **MVP constraint:** `send_email` and `send_linkedin_msg` approvals can be created (for drafts), but the send endpoint is physically absent from the v1 build (R22).
 

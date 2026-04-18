@@ -1,0 +1,1 @@
+export const EXTRACTORS_PACKAGE = "@ma-ga-agent/extractors";

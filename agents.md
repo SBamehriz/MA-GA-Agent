@@ -75,6 +75,14 @@ These are non-negotiable across every agent:
 
 ---
 
+## 3.1 Current Implementation Emphasis
+
+- The current build order for the local personal-agent implementation is: `UserProfileIngestionAgent` → `StoryBankBuilderAgent` → discovery agents (`UniversityDiscoveryAgent`, `ProgramQualificationAgent`, funding/contact agents) → `WritingAgent` (including resume tailoring) → application-preparation/checklist workflows → approval support → browser/portal automation later.
+- The catalog below is still the full target system. Deferred agents stay in the design so contracts, entities, and handoffs remain stable.
+- Deferment is a priority decision, not a removal decision.
+
+---
+
 ## 4. Agent Catalog
 
 Each entry specifies: job, inputs, outputs, context/memory, tools, handoffs, escalation, failure modes, confidence, idempotency.
@@ -215,11 +223,12 @@ Each entry specifies: job, inputs, outputs, context/memory, tools, handoffs, esc
 
 - **Job:** run structured onboarding; parse documents; fill profile fields.
 - **Inputs:** transcript upload, resume upload, onboarding answers.
-- **Outputs:** `user_profile_revision` (attested) + story-bank seed.
-- **Tools:** PDF parser, resume parser, structured form UI, voice-to-text.
+- **Outputs:** draft `user_profile_revision`, `profile_source_document[]`, and a story-bank seed package for the next verification step.
+- **Tools:** PDF parser, resume parser, local structured prompt runner, voice-to-text.
+- **Current priority:** first implementation block.
 - **Escalation:** any critical field blank → blocking prompt.
 - **Failure modes:** transcript OCR errors; GPA scale confusion.
-- **Confidence:** per-field; user attests at end.
+- **Confidence:** per-field; revision remains draft until the user verifies and attests.
 - **Idempotency:** `{user_id, revision_id}`.
 
 ---
@@ -227,21 +236,23 @@ Each entry specifies: job, inputs, outputs, context/memory, tools, handoffs, esc
 ### 4.12 StoryBankBuilderAgent
 
 - **Job:** produce ~30 verified vignettes from the onboarding interview + resume + projects.
-- **Outputs:** `story[]` each with `{ title, summary, themes[], proof_points[], verified_by_user }`.
+- **Outputs:** `story[]` each with `{ title, summary, themes[], proof_points[], source_refs[], verified_by_user }`.
 - **Tools:** conversational interviewer (voice + text), resume cross-reference.
+- **Current priority:** first implementation block, immediately after profile ingestion.
 - **Escalation:** story lacks concrete proof → request specific detail.
 - **Failure modes:** stories unverifiable against profile; fabricated specifics.
-- **Confidence:** binary (verified or not); only verified usable downstream.
+- **Confidence:** binary (verified or not); stories default to unverified until the user confirms them.
 - **Idempotency:** `{user_id, source_hash}`.
 
 ---
 
 ### 4.13 WritingAgent
 
-- **Job:** draft SOP, PS, short answers, cover letters, outreach.
+- **Job:** draft SOP, PS, short answers, cover letters, outreach, and tailored resume/CV variants.
 - **Inputs:** prompt, program evidence, opportunity evidence, contact context (if outreach), story bank, voice anchor.
 - **Outputs:** `draft` + critic notes + fact-check report + style report.
 - **Tools:** draft model (Opus), critic model (Sonnet, different prompt), fact-check deterministic mapper, style-check heuristics.
+- **Current priority:** after onboarding-memory and discovery are stable.
 - **Loop:** draft → critic → rewrite → fact-check → style-check.
 - **Rules:** factually verifiable claims must map to story bank or profile; otherwise draft is rejected.
 - **Escalation:** draft unable to pass fact-check after 2 rewrites → user input needed.
@@ -257,6 +268,7 @@ Each entry specifies: job, inputs, outputs, context/memory, tools, handoffs, esc
 - **Inputs:** application payload (profile slice, drafts, files), portal binding.
 - **Outputs:** section-by-section state + Playwright trace URL + validation errors + submission preview.
 - **Tools:** portal adapter (via the Playwright worker).
+- **Current priority:** intentionally deferred until onboarding, discovery, writing, and checklist preparation are reliable locally.
 - **Rules:**
   - Auto-fill: identity, education, tests, short demographics.
   - Prepare-only: essays, short answers, portfolio links, anything flagged `needs_user_review`.

@@ -8,7 +8,9 @@
 
 ## 1. Purpose of this Project
 
-MA-GA-Agent ("Master's + Graduate Assistantship Agent") is a single-tenant, agentic admissions and funding operations system. It helps one user apply to Master's programs in Artificial Intelligence and closely related fields while simultaneously discovering and pursuing Graduate / Teaching / Research Assistantships (GA/TA/RA) and other funding that reduces or covers tuition.
+MA-GA-Agent ("Master's + Graduate Assistantship Agent") is a local-first, single-user admissions and funding operator. It helps one person apply to Master's programs in Artificial Intelligence and closely related fields while simultaneously discovering and pursuing Graduate / Teaching / Research Assistantships (GA/TA/RA) and other funding that reduces or covers tuition.
+
+It is not a public SaaS product. It does not need deployment-first architecture, auth-first UX, or dashboard breadth before it becomes useful. The system should be able to do real work for one user locally before hosted concerns become implementation drivers.
 
 The system is designed around four non-negotiable properties:
 
@@ -25,14 +27,14 @@ This is not a chatbot. It is not a "write my SOP" tool. It is a workflow operato
 
 The product delivers, per admissions cycle:
 
-- A ranked, evidence-backed shortlist of 30–80 AI-relevant Master's programs.
-- Per-program: funding status, fee status, deadlines, required documents, essay prompts, and a resolved human contact when available.
+- One deeply attested user profile revision with source documents, verified stories, and a voice anchor.
+- A ranked, evidence-backed shortlist of AI-relevant Master's programs with funding status, deadlines, required documents, and resolved contacts when available.
 - Draft application materials (SOP, PS, short answers, CV, outreach) grounded in the user's verified story bank.
-- Pre-filled, draft-saved applications on the actual portals (Slate, CollegeNET, Liaison GradCAS, ApplyWeb), stopped at the submit gate.
-- A unified approval queue for fee-paying, submitting, letter requests, outreach sending, and any external action.
-- Deadline tracking, freshness monitoring, and a transparent evidence ledger.
+- Application-ready packets and checklists that make top programs ready for user review and later execution.
+- A unified approval queue for risky actions and a transparent evidence ledger with freshness tracking.
+- Browser automation support later, once onboarding, discovery, writing, and preparation are already working well.
 
-The user's realistic per-cycle workload drops from 100+ hours to ~15–30 hours, concentrated in onboarding, story interview, and approval review.
+The user's realistic per-cycle workload should drop by front-loading effort into onboarding, story interview, and targeted approval review instead of repetitive research and drafting.
 
 ---
 
@@ -90,6 +92,7 @@ These rules override default behaviors.
 - **Do not expand scope.** If the docs say "MVP excludes outreach sending," do not add outreach sending "since it's easy." Features live where they live.
 - **Do not introduce new dependencies without updating architecture.md.** Every library, service, or provider must be listed there with a rationale.
 - **Do not merge responsibilities across agents.** Agents are deliberately single-purpose; merging creates coordination bugs.
+- **Do not prioritize hosted auth, dashboard polish, deployment work, or portal-driving ahead of onboarding memory, discovery, writing, and application preparation unless a concrete blocker requires it.**
 
 ### 5.3 Safety rules
 
@@ -206,6 +209,8 @@ When a decision must be made and docs are silent, these defaults apply:
 - **Store now vs fetch later:** store with evidence; refresh per freshness SLA.
 - **Fewer fields vs more fields:** fewer, typed, with provenance.
 - **Agentic vs templated writing:** templated skeleton with agentic personalization.
+- **Local-first vs hosted:** local-first; preserve hosted scaffolding, but do not make it a blocker.
+- **Scriptable surface vs polished UI:** scriptable/local review surface first.
 - **Escalate to user vs guess:** escalate.
 - **Specialize prompt vs generic:** specialize for the 5 highest-stakes fields (deadline, fee, tuition coverage, stipend, required documents).
 

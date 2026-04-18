@@ -1,0 +1,1 @@
+export const UI_PACKAGE = "@ma-ga-agent/ui";

@@ -1,0 +1,1 @@
+export const APPROVALS_PACKAGE = "@ma-ga-agent/approvals";

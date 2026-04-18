@@ -1,0 +1,24 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "packages/**/*.ts",
+    "packages/**/*.tsx",
+    "worker-browser/**/*.ts",
+    "scripts/**/*.ts",
+    "middleware.ts",
+    "instrumentation.ts",
+    "next.config.ts"
+  ],
+  "exclude": ["node_modules"]
+}

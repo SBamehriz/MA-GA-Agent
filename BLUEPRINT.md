@@ -12,15 +12,17 @@ Version: 1.0 (architecture + operations blueprint; no implementation code).
 
 ### 1.1 What the product is
 
-MA-GA-Agent is an AI-operated admissions and funding operations system. It behaves like a highly capable, permission-bounded research associate and application coordinator that runs continuously in the background on behalf of one user at a time. Its job is to transform a single deep onboarding session and a small number of approval clicks into a fully-managed portfolio of high-quality graduate applications with funding intelligently attached to each one.
+MA-GA-Agent is a local-first personal admissions and funding operator. It behaves like a highly capable, permission-bounded research associate and application coordinator that works on behalf of one user at a time. Its job is to turn deep onboarding, verified personal memory, and a small number of approval decisions into a high-quality application pipeline with funding intelligently attached to each program.
 
 It is explicitly **not** a chatbot, not a "write my SOP" tool, and not a job-board. It is a *workflow operator* that:
 
+- Builds and maintains a reusable user memory layer before trying to automate downstream work.
 - Discovers programs and funding.
 - Extracts the ground truth behind each opportunity.
 - Scores and sequences applications by expected value.
 - Generates tailored application materials grounded in a verified story bank.
-- Drives browser automation through admissions portals up to a safety gate.
+- Prepares application packets and checklists so the user is ready before any portal-driving begins.
+- Preserves browser automation as a later capability, not the first implementation priority.
 - Identifies the humans who actually control outcomes and, when strategically useful, drafts outreach for the user to approve.
 - Tracks every deadline, document, and follow-up, and asks the user the smallest possible number of questions to make progress.
 
@@ -40,10 +42,12 @@ The user's real problem is not "write essays faster." It is "*stop paying a hidd
 
 Within a 4–8 week cycle, the user has:
 
+- An attested user profile revision with source documents, verified stories, and a voice anchor that downstream agents can trust.
 - A ranked, evidence-backed list of 30–80 AI-adjacent Master's programs, each tagged with funding status, fee status, and contact clarity.
-- 10–25 submitted applications, of which the majority are free-or-fee-waived, all finished before their deadlines, all grounded in the user's real story.
-- A shortlist of 5–15 GA/TA/RA opportunities they are being considered for, with outreach conversations (if the user approved) already in motion.
-- A dashboard showing exactly what remains, what is blocked on the user, and what the system is waiting on externally.
+- A shortlist of 5–15 GA/TA/RA opportunities they can realistically pursue, with the relevant human contacts identified when possible.
+- Tailored SOPs, PSs, short answers, cover letters, and resume variants grounded in the user's real story.
+- Application-ready packets and checklists for the top targets, with risky actions still held behind approval gates.
+- A minimal local control surface showing what remains, what is blocked on the user, and what the system is waiting on externally.
 
 ### 1.4 Primary user
 
@@ -306,7 +310,7 @@ Each subproblem is defined with: why it is hard, required data, sources, failure
 
 ### 3.1 Architectural style recommendation
 
-**Recommended: a single-tenant, event-driven monolith with modular agents, running on Fluid Compute (Vercel Functions) backed by Postgres + Redis + a durable workflow engine (Inngest or Vercel Workflow DevKit) + a persistent browser automation worker on a VM.**
+**Recommended: a single-user, event-driven modular monolith that runs locally first, preserves the current package and app scaffold, and can later be hosted if needed. Keep the existing Next.js-based structure, but do not make Vercel, Clerk, Redis, Blob, or browser-worker provisioning a blocker for the first useful slice.**
 
 Why not microservices in v1: this is one user, one workflow, moderate throughput. Microservices add deployment and observability cost for no benefit. Agents are logical modules inside a monolith, not separate services.
 
@@ -318,32 +322,32 @@ Why a separate browser worker: Playwright sessions are stateful, heavy, and need
 
 ### 3.2 Layers
 
-#### 3.2.1 Frontend (Next.js App Router on Vercel)
+#### 3.2.1 Frontend (Next.js App Router)
 
-- **Purpose:** onboarding, approval queue, dashboard, evidence inspector, manual overrides.
-- **Responsibilities:** render program lists, funding badges, deadlines, diffs before submission, outreach drafts, status tiles.
+- **Purpose:** a thin local operator surface for onboarding review, approvals, evidence inspection, and manual overrides.
+- **Responsibilities:** render onboarding review state first; ranked lists, dashboards, and richer operator views later.
 - **Inputs:** user actions, server-rendered data.
 - **Outputs:** approval events, user-profile updates.
-- **MVP stack:** Next.js 16 App Router, shadcn/ui, Tailwind, React Server Components, Auth via Clerk (Vercel Marketplace).
+- **MVP stack:** keep the existing Next.js 16 App Router scaffold, but prioritize `(onboarding)` and minimal review surfaces. Local single-user mode does not require auth.
 - **Scale stack:** unchanged; add offline-capable mobile wrapper only after MVP validated.
-- **Tradeoff:** SSR-heavy dashboard vs client-rich editor. Recommend SSR for the dashboard + client components for the essay editor.
+- **Tradeoff:** thin local review surface vs broad dashboard. Recommend the thin surface first.
 
-#### 3.2.2 Backend / API (Vercel Functions, Node.js 24)
+#### 3.2.2 Backend / API (Node.js runtime)
 
-- **Purpose:** the thin API between the frontend and the workflow engine.
-- **Responsibilities:** auth, CRUD for profile, queue approvals, trigger workflows, emit events.
-- **Inputs:** frontend calls, webhooks from workflow engine.
+- **Purpose:** the thin local API and script entrypoint layer between the operator surface and the workflow engine.
+- **Responsibilities:** CRUD for profile and source documents, trigger workflows, emit events, fulfill approvals when those workflows arrive.
+- **Inputs:** local UI calls, scripts, and later workflow webhooks if hosted services are introduced.
 - **Outputs:** events into the workflow engine.
-- **MVP stack:** Next.js Route Handlers + Drizzle ORM + Postgres (Neon via Vercel Marketplace).
-- **Tradeoff:** tRPC vs REST vs Server Actions. Recommend **Server Actions** for form-heavy flows and REST for anything a future mobile client will call.
+- **MVP stack:** Next.js Route Handlers + Drizzle ORM + a Postgres-compatible database. Hosted Neon wiring is optional later.
+- **Tradeoff:** scripts/CLI vs REST vs Server Actions. Recommend scripts and Server Actions for the first local slice, REST only where another process truly needs it.
 
 #### 3.2.3 Orchestration layer / workflow engine
 
 - **Purpose:** durable execution of long-running, multi-step workflows that sleep, retry, and pause for humans.
 - **Responsibilities:** run the workflows defined in Section 16.
-- **MVP stack:** **Inngest** (best-in-class DX, Vercel-friendly, supports sleeps, steps, concurrency, cancellation, replay).
+- **MVP stack:** typed workflow definitions with a local coordinator runner first; **Inngest** remains a strong hosted option once durability beyond local execution is needed.
 - **Scale stack:** Inngest continues to scale; consider Temporal only if the team grows to require stronger typing and multi-language workers.
-- **Tradeoff:** Inngest vs Workflow DevKit vs Temporal vs custom. Recommend Inngest for speed and Vercel integration.
+- **Tradeoff:** local runner vs Inngest vs Workflow DevKit vs Temporal. Recommend local runner for the onboarding-memory slice, then promote the same contracts into Inngest if needed.
 
 #### 3.2.4 Browser automation layer
 
@@ -351,6 +355,7 @@ Why a separate browser worker: Playwright sessions are stateful, heavy, and need
 - **Responsibilities:** open browser contexts, maintain per-portal sessions, upload files, read validation messages, produce structured run logs.
 - **MVP stack:** **Playwright** on a persistent VM (Fly.io or a small Hetzner box), wrapped with **Browserbase** or **Steel.dev** for managed sessions + captcha handling. Use `@playwright/test`'s trace viewer output for audit.
 - **Scale stack:** Browserbase pool + sticky residential IPs where ToS allows.
+- **Priority note:** preserve the interface and worker boundary early, but do not let portal-driving become the first implementation milestone.
 - **Not recommended for MVP:** running Playwright inside Vercel Functions (cold starts kill session state).
 
 #### 3.2.5 Crawling and search layer
@@ -364,7 +369,7 @@ Why a separate browser worker: Playwright sessions are stateful, heavy, and need
 
 - **Purpose:** convert raw content into typed records (program, deadline, fee, assistantship, contact).
 - **Responsibilities:** LLM-based structured extraction with strict schemas + rules-based validators.
-- **MVP stack:** AI SDK v6 via the Vercel AI Gateway, with schemas enforced by Zod. Use a mix of Claude Sonnet (accuracy) and Haiku (throughput). Never let extraction hallucinate a URL — require quoted source text.
+- **MVP stack:** AI SDK v6 via a shared AI abstraction (Vercel AI Gateway optional), with schemas enforced by Zod. Use a mix of Claude Sonnet (accuracy) and Haiku (throughput). Never let extraction hallucinate a URL — require quoted source text.
 - **Tradeoff:** generic single-prompt extraction vs. per-field specialized prompts. Recommend specialized prompts for the five highest-stakes fields (deadline, fee, tuition coverage, stipend, required documents) and a general prompt for the rest.
 
 #### 3.2.7 Ranking engine
@@ -386,8 +391,8 @@ Why a separate browser worker: Playwright sessions are stateful, heavy, and need
 
 #### 3.2.10 Human approval layer
 
-- **Purpose:** expose structured approval items, enforce gates, record decisions.
-- **MVP stack:** a Postgres `approval_request` table + frontend queue + webhook that resumes paused workflows.
+- **Purpose:** expose structured approval items, enforce gates, and record decisions.
+- **MVP stack:** a Postgres `approval_request` table + local review surface. Notification fan-out can wait.
 
 #### 3.2.11 Monitoring and retry system
 
@@ -397,14 +402,14 @@ Why a separate browser worker: Playwright sessions are stateful, heavy, and need
 #### 3.2.12 Notifications system
 
 - **Purpose:** tell the user what needs their attention.
-- **MVP stack:** Resend email + in-app inbox. SMS only for deadline-critical events, opt-in.
+- **MVP stack:** local review queue first. Email and SMS are optional later additions, not Phase 1 blockers.
 
 #### 3.2.13 Storage layer
 
-- **Primary DB:** Postgres (Neon).
-- **Object storage:** Vercel Blob for user documents (transcript, CV, writing samples), with client-side encryption before upload.
-- **Cache / queue:** Upstash Redis.
-- **Vector store:** pgvector on Neon (avoids a second data store in v1).
+- **Primary DB:** Postgres-compatible storage, local first.
+- **Object storage:** local files or generic object storage for user documents (transcript, CV, writing samples), with client-side encryption before upload where appropriate.
+- **Cache / queue:** optional in the first slice; add Redis only when local-first execution actually needs it.
+- **Vector store:** pgvector remains the default when embeddings become necessary.
 
 #### 3.2.14 Logging and observability
 
@@ -1185,16 +1190,15 @@ Hurts:
 
 ### 14.1 What the MVP includes
 
-- Single-user system (authenticated, one tenant).
-- Onboarding (identity, academics, targets, story interview, preferences).
+- Single-user, local-first system for one applicant.
+- Onboarding memory: identity, academics, targets, source documents, story interview, preferences, attestation, and voice anchor.
 - Research engine for ~75–150 curated institutions (CSRankings top-50 + user-specified + 20 mid-tier state schools with strong AI).
 - Program qualification, requirements extraction, fee/waiver, deadlines, funding discovery, funding classification.
-- Scoring and dashboard.
-- Essay draft/critique/rewrite loop for SOP, PS, and short answers.
-- Portal adapters for Slate, CollegeNET, Liaison GradCAS, ApplyWeb + generic fallback.
-- Form pre-fill + draft saving; stop at submit.
-- Approval queue + emergency stop.
 - Contact discovery (internal use) with LinkedIn/faculty/Scholar enrichment.
+- Scoring and a minimal review surface; dashboard breadth can wait.
+- Essay draft/critique/rewrite loop for SOP, PS, short answers, and resume/CV tailoring.
+- Application packet and checklist generation for top targets.
+- Approval queue + emergency stop for risky actions.
 - Outreach drafting (not sending) — drafts stored but not released in MVP (see Section 18).
 - Deadline monitoring.
 - Evidence ledger and confidence surfacing.
@@ -1204,6 +1208,9 @@ Hurts:
 - No auto-submit (never in v1, period).
 - No auto-pay.
 - No outreach sending in first release (drafts only; sending enabled in a follow-up release once trust is established — see Section 18).
+- No hosted deployment dependency for the first useful slice.
+- No auth-first product shell requirement for local single-user operation.
+- No portal automation requirement for the onboarding-memory, discovery, writing, and packet-prep milestones.
 - No PhD workflows.
 - No offer negotiation.
 - No multi-tenant.
@@ -1221,7 +1228,7 @@ Hurts:
 
 ### 14.4 Automated in MVP
 
-- Research, extraction, scoring, drafting, form pre-fill, draft saving, contact discovery, enrichment (internal), deadline tracking, freshness refreshes.
+- Research, extraction, scoring, drafting, resume tailoring, packet/checklist preparation, contact discovery, enrichment (internal), deadline tracking, freshness refreshes.
 
 ### 14.5 Target institutions count for first run
 
@@ -1238,7 +1245,10 @@ Hurts:
 
 ### 14.8 Success looks like
 
-- User completes 10+ submitted (by them) applications in a cycle with <20 hours of their own time, of which ≥70% are free/waived.
+- User completes onboarding once and gets a reusable attested profile revision, verified stories, and a voice anchor that downstream agents can trust.
+- User receives an evidence-backed ranked list plus funding/contact intelligence for the first meaningful batch of programs without needing a hosted deployment setup.
+- User gets tailored SOP/PS/short-answer/resume outputs for top targets with fact-check constraints enforced.
+- User gets multiple application-ready packets/checklists before browser automation is required.
 - ≥85% deadline accuracy on the "apply now" queue.
 - ≥90% funding classification agrees with a manual audit on a sample of 30.
 - ≥80% essay drafts need only light edits before submission.
@@ -1246,89 +1256,92 @@ Hurts:
 
 ### 14.9 Why this MVP is the correct first build
 
-- It attacks the highest-leverage manual tax (discovery + pre-fill + drafting) without taking the risks that would destroy trust (auto-submit, auto-send).
+- It attacks the highest-leverage manual tax (onboarding memory + discovery + writing + preparation) without taking the risks that would destroy trust (auto-submit, auto-send).
 - It generates an operational record that enables safe expansion in v2.
 
 ---
 
 ## SECTION 15 — PHASED ROADMAP
 
-### Phase 0 — Validation and research (2 weeks)
+### Phase 0 — Foundations and local execution (2 weeks)
 
-- Objectives: confirm scope, gather 10 real admissions pages per portal vendor, hand-annotate as golden set.
-- Deliverables: golden set, portal inventory, seed institution list, onboarding script.
+- Objectives: confirm scope, preserve the scaffold, and make the core runtime work locally without hosted blockers.
+- Deliverables: settled entity model, onboarding script, typed env/config, evidence ledger spine, local execution path.
 - Dependencies: user availability for story interview prototype.
-- Tasks: pick tech stack (done: Next.js, Neon, Inngest, Playwright on VM, Vercel AI Gateway), set up repo, settle entity model.
-- Risks: picking the wrong portal adapter targets.
-- Exit: architecture doc signed off (this document).
+- Tasks: keep the existing repo shape, settle the profile/source-document model, wire the coordinator contracts, define safe local defaults.
+- Risks: over-investing in hosted plumbing before the first useful slice exists.
+- Exit: architecture, data model, and onboarding-memory direction are signed off.
 
-### Phase 1 — Data collection engine (4 weeks)
+### Phase 1 — Onboarding and memory (3 weeks)
 
-- Objectives: run research, extraction, classification, and evidence ledger end-to-end on 20 institutions.
-- Deliverables: working research pipeline, Postgres schema, Inngest workflows, evidence inspector.
-- Tasks: crawler, extractors, funding classifier taxonomy, deadline validator, PDF pipeline.
-- Risks: LLM extraction cost; build specialized prompts + caching from day one.
-- Exit: 20 institutions with ≥85% field accuracy vs golden set.
+- Objectives: capture deep user context once and make it reusable everywhere else.
+- Deliverables: profile revision flow, source-document tracking, story-bank verification, voice anchor, attestation, `onboarding.complete`.
+- Tasks: transcript/resume ingestion, onboarding answers capture, story verification, voice-anchor persistence, local review surface or script trigger.
+- Risks: weak source linkage or unverifiable stories poisoning downstream writing.
+- Exit: one real user profile revision is persisted locally with verified stories and attested fields.
 
-### Phase 2 — Ranking and prioritization (2 weeks)
+### Phase 2 — Program, funding, and contact discovery (4 weeks)
 
-- Objectives: implement scoring, filters, statuses, dashboard v1.
-- Deliverables: scored queue, user-tunable weights, evidence badges.
-- Tasks: scoring SQL, frontend queue, quick approvals.
-- Risks: user doesn't trust the scores — mitigated with transparent "why this rank."
-- Exit: user confirms ranked list matches intuition on 20 institutions.
+- Objectives: run research, extraction, classification, and evidence collection end-to-end on a meaningful institution set.
+- Deliverables: working research pipeline, funding taxonomy, contact discovery + enrichment, evidence inspector/read model.
+- Tasks: crawler, extractors, funding classifier taxonomy, deadline validator, PDF pipeline, contact resolution.
+- Risks: LLM extraction cost and noisy discovery breadth; mitigate with specialized prompts, caching, and curated seeds.
+- Exit: a ranked evidence-backed discovery set is usable on 20 institutions with contact intelligence included.
 
-### Phase 3 — Document generation (4 weeks)
+### Phase 3 — Writing and resume tailoring (4 weeks)
 
-- Objectives: essay + short-answer + CV tailoring.
-- Deliverables: draft/critique/rewrite loop, fact-check, style-check, user review UI.
-- Tasks: story bank builder, voice anchor, prompt library.
-- Risks: generic outputs; enforce voice + fact-check aggressively.
-- Exit: 3 SOPs and 5 short answers reviewed by user with ≤30% line-level edits.
+- Objectives: turn verified user memory plus program evidence into strong application artifacts.
+- Deliverables: SOP/PS/short-answer drafting loop, fact-check, style-check, resume/CV tailoring, review path.
+- Tasks: prompt library, voice-anchor use, claim-to-story/profile mapper, tailored resume outputs.
+- Risks: generic outputs or invented claims; enforce fact-check and voice constraints aggressively.
+- Exit: 3 SOPs, 5 short answers, and at least 2 tailored resume variants reviewed with light user edits.
 
-### Phase 4 — Automation and portal execution (5 weeks)
+### Phase 4 — Application preparation and checklist generation (3 weeks)
 
-- Objectives: fill and save drafts across Slate, CollegeNET, Liaison, ApplyWeb.
-- Deliverables: portal adapters, draft-save workflows, validation handling, approval at fee and submit gates.
-- Tasks: Playwright on VM, Browserbase integration, adapter DSL, golden-set regression runs.
-- Risks: portal anti-bot — mitigate with session persistence, low concurrency, ToS-respecting usage.
-- Exit: 5 real applications prepared to submit gate on 4 different portals.
+- Objectives: make top targets ready without depending on portal automation.
+- Deliverables: application-ready packets, artifact bundles, requirement checklists, missing-info flags, readiness states.
+- Tasks: derive per-program packet requirements, assemble approved artifacts, produce checklist/status outputs, surface blockers.
+- Risks: preparing packets that are incomplete or not traceable to the attested profile revision.
+- Exit: several top programs are marked ready-for-user-review with complete packet/checklist state.
 
-### Phase 5 — Contact intelligence and outreach support (3 weeks)
+### Phase 5 — Approval-based automation support (2 weeks)
 
-- Objectives: contact discovery + enrichment + outreach drafts.
-- Deliverables: contact resolver, match scoring, outreach drafter, outreach approval queue (send disabled).
-- Tasks: enrichment provider integration, role taxonomy, outreach templates.
-- Risks: LinkedIn ToS; use approved provider.
-- Exit: 30 contacts resolved with ≥0.85 confidence; 10 outreach drafts reviewed by user.
+- Objectives: formalize pause/resume, approval queues, and emergency-stop behavior before any risky automation expands.
+- Deliverables: approval queue, approval builders, workflow pause/resume, emergency stop.
+- Tasks: approval payload design, batch review patterns, audit logs, decision replay.
+- Risks: hidden side-effect paths; mitigate with hard gates and compile-time exclusions.
+- Exit: risky actions cannot proceed without explicit user decisions and are fully auditable.
 
-### Phase 6 — Reliability and scaling (3 weeks)
+### Phase 6 — Browser automation and portal execution (later)
 
-- Objectives: golden-set regression, freshness SLAs, monitoring, alerting, hardened backups.
-- Deliverables: SLOs, dashboards, runbooks.
-- Exit: 1-week continuous operation without human patching.
+- Objectives: drive portals only after onboarding, discovery, writing, packet prep, and approvals already work.
+- Deliverables: portal adapters, draft-save workflows, validation handling, fee/submit gates.
+- Tasks: Playwright worker, adapter DSL, drift handling, golden-set portal regressions.
+- Risks: portal anti-bot and adapter brittleness.
+- Exit: real applications can be prepared to the submit gate without violating earlier safety constraints.
 
-### Phase 7 — Advanced autonomy (ongoing)
+### Phase 7 — Reliability, hosted hardening, and advanced autonomy (ongoing)
 
-- Objectives: enable outreach sending (post-MVP), more portal adapters, user-tunable autonomy per action.
-- Deliverables: outreach send with per-channel caps; adapter expansion; multi-cycle memory.
+- Objectives: harden the system after the local-first operator core is already useful.
+- Deliverables: SLOs, dashboards, backups, optional hosted deployment polish, later outreach-send controls.
 - Exit criterion: trust metrics hit targets (Section 17).
 
 ---
 
 ## SECTION 16 — OPERATIONAL WORKFLOWS
 
-Every workflow runs in Inngest with named steps; each step is a checkpoint.
+Every workflow runs with named steps and explicit checkpoints. Inngest remains a strong later durability option, but the contracts should also make sense in local-first execution.
 
 ### 16.1 New user onboarding
 
-1. `auth.ready` → create user record.
-2. `onboarding.session_1` (identity, academics, targets) → profile draft saved.
-3. `ingest.transcript` + `ingest.resume` → auto-extract + user confirm.
-4. `onboarding.session_2` (story interview) → story bank draft saved.
-5. `onboarding.session_3` (preferences, recommenders, credentials, writing style).
-6. `profile.attest` → user clicks attestation; `profile_revision_id` frozen.
-7. Kickoff `research.cycle_begin`.
+1. `onboarding.started` → create or resume the local user workspace.
+2. `onboarding.answers_captured` (identity, academics, targets, preferences) → profile draft saved.
+3. `ingest.source_document` for transcript, resume, and related materials → extracted facts queued for user review.
+4. `story_bank.draft_generated` from interview + source docs → candidate stories saved with source references.
+5. `voice_anchor.captured` → writing-style anchor saved.
+6. `story.verify` + `profile.attest` → verified stories and attested profile revision frozen.
+7. Emit `onboarding.complete`.
+8. Kickoff `research.cycle_begin`.
 
 Failure: any incomplete section → `onboarding.resume_at`.
 
@@ -1502,16 +1515,16 @@ These are opinions, not menus.
 ### 18.9 Best first implementation path
 
 1. Lock this blueprint.
-2. Spin up Next.js + Neon + Inngest + AI Gateway + a small VM for Playwright.
-3. Build the evidence ledger + entity model first (Phase 1 spine).
-4. Add research + extraction for 20 institutions against a golden set.
-5. Add scoring + dashboard so the user can see progress early.
-6. Add essay generation with fact-check hard-enforced.
-7. Add the Slate adapter first (most common at R1 grad schools), then CollegeNET, then Liaison, then ApplyWeb.
-8. Add contact discovery + enrichment (internal use).
-9. Add outreach drafts (no send).
+2. Keep the current scaffold, but make it work locally before expanding hosted dependencies.
+3. Build the evidence ledger + profile/source-document model first.
+4. Implement onboarding ingestion, story verification, voice anchor capture, and `onboarding.complete`.
+5. Add program, funding, and contact discovery against a curated golden set.
+6. Add writing and resume tailoring with fact-check hard-enforced.
+7. Add application packet and checklist generation before any portal driving.
+8. Add approval-based automation support.
+9. Add portal adapters only after the earlier slices are already useful.
 10. Harden with golden-set regressions, freshness SLAs, and monitoring.
-11. Only then consider enabling outreach sending in a second release.
+11. Only then consider more hosted plumbing or outreach sending in a later release.
 
 ### 18.10 The north-star rule
 
@@ -1519,4 +1532,4 @@ These are opinions, not menus.
 
 ---
 
-*End of blueprint. Next step when ready: scaffold the repo (Next.js App Router + Drizzle + Neon + Inngest + Vercel AI Gateway + a VM-hosted Playwright worker) against this spec.*
+*End of blueprint. Next step when ready: implement the onboarding-memory slice inside the existing scaffold and keep hosted plumbing optional until that slice is genuinely useful.*

@@ -1,0 +1,1 @@
+export const CLASSIFIERS_PACKAGE = "@ma-ga-agent/classifiers";
